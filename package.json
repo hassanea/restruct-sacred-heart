@@ -7,15 +7,29 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "check": "npm-check -u",
+    "depcheck": "depcheck",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxt/fonts": "0.14.0",
+    "@nuxt/image": "2.0.0",
     "@nuxthub/core": "0.10.7",
-    "nuxt": "^4.3.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "@vesp/nuxt-fontawesome": "2.0.0",
+    "nuxt": "^4.4.2",
+    "tailwindcss": "^4.2.1",
     "vue": "^3.5.30",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "wrangler": "^4.72.0"
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-regular-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/pro-regular-svg-icons": "^7.2.0",
+    "@fortawesome/pro-solid-svg-icons": "^7.2.0",
+    "wrangler": "^4.73.0"
   }
 }
