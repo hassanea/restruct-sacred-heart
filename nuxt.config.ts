@@ -10,18 +10,45 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/image",
   ],
+  devServer: {
+    host: "0.0.0.0",
+  },
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
       include: ["@fortawesome/free-solid-svg-icons"],
     },
+    server: {
+      hmr: {
+        protocol: "http",
+        host: "localhost",
+        clientPort: 3000,
+        port: 3000,
+      },
+    },
   },
+
+  // vite: {
+  // server: {
+  // hmr: {
+  // protocol: "http",
+  // host: 'localhost',
+  // clientPort: 3000,
+  // port: 3000,
+  // },
+  // },
+  // },
+  // });
+
   css: ["./app/assets/css/main.css"],
   hub: {},
   runtimeConfig: {
     public: {},
   },
   fontawesome: {
+    icons: {
+      solid: ["bomb", "do-not-enter"],
+    },
     proIcons: {
       regular: ["face-thinking"],
     },

@@ -122,6 +122,10 @@
 </template>
 
 <script lang="ts" setup>
+import data from "@/assets/data/data.json";
+
+console.log(data);
+
 const currentYear = ref(0);
 onMounted(() => {
   currentYear.value = new Date().getFullYear();

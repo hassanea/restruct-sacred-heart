@@ -1,0 +1,78 @@
+<template>
+  <div class="text-dark dark:bg-gray-400 bg-gray-200">
+    <nuxt-layout name="error-layout">
+      <base-section
+        class="border-dark bg-[#e6e8fa] mx-auto h-auto w-full max-w-125 rounded-lg border-[3px] border-solid p-8 text-center shadow-2xl"
+      >
+        <template #default>
+          <div class="flex flex-col items-center justify-center">
+            <font-awesome
+              v-if="error?.status === 500"
+              class="text-dark rounded inline-block align-middle md:text-4xl text-3xl"
+              icon="fa-solid fa-bomb"
+            />
+            <font-awesome
+              v-else
+              class="text-dark rounded inline-block align-middle md:text-4xl text-3xl"
+              icon="fa-solid fa-do-not-enter"
+            />
+            <h1
+              class="md:text-6xl text-5xl text-dark leading-normal font-bold tracking-wide my-5 md:my-6"
+            >
+              {{ error?.status }}
+            </h1>
+            <p
+              class="text-dark text-lg md:text-xl font-sans2 font-medium leading-normal mb-4 italic"
+            >
+              {{ error?.message }}
+            </p>
+            <!-- <base-button
+              variant="btn"
+              label="Clear Error and Redirect to Home"
+              @click="handleClearErrorNavigateToHome"
+              @keydown.enter="handleClearErrorNavigateToHome"
+            >
+              Go To Home
+            </base-button> -->
+          </div>
+        </template>
+      </base-section>
+    </nuxt-layout>
+  </div>
+</template>
+
+<script setup lang="ts">
+// @ts-ignore
+import type { NuxtError } from "#app";
+// import BaseSection from "@/components/layout/global/BaseSection.vue";
+// import BaseButton from "@/components/UI/BaseButton.vue";
+
+const props = defineProps({
+  error: Object as () => NuxtError,
+});
+
+// useScriptMatomoAnalytics({
+//   matomoUrl: "https://www.eahassan.com/matomo/",
+//   siteId: "1",
+//   trackPageView: true,
+//   enableLinkTracking: true,
+// });
+
+const handleClearErrorNavigateToHome = () => {
+  clearError({ redirect: "/" });
+};
+
+onMounted(() => {
+  useHead({
+    title: `${props.error?.status} Error`,
+  });
+});
+</script>
+
+<style lang="scss" scoped>
+// .error-icon {
+//   @apply text-dark rounded inline-block align-middle md:text-4xl text-3xl;
+//   /* bg-[#f9d3d9] dark:bg-[#f4a7b3] */
+//   /*  :class="{ 'bg-yellow-100': error?.statusCode === 400, 'bg-[#f9d3d9] dark:bg-[#f4a7b3]': error?.statusCode === 500 }" */
+// }
+</style>
