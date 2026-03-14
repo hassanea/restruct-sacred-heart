@@ -46,9 +46,9 @@ export default defineNuxtConfig({
     public: {},
   },
   fontawesome: {
-    icons: {
-      solid: ["bomb", "do-not-enter"],
-    },
+    // icons: {
+    // solid: ["bomb", "do-not-enter"],
+    // },
     proIcons: {
       regular: ["face-thinking"],
     },
