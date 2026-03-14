@@ -69,10 +69,4 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped>
-// .error-icon {
-//   @apply text-dark rounded inline-block align-middle md:text-4xl text-3xl;
-//   /* bg-[#f9d3d9] dark:bg-[#f4a7b3] */
-//   /*  :class="{ 'bg-yellow-100': error?.statusCode === 400, 'bg-[#f9d3d9] dark:bg-[#f4a7b3]': error?.statusCode === 500 }" */
-// }
-</style>
+<style lang="css" scoped></style>
