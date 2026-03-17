@@ -26,14 +26,15 @@
             >
               {{ error?.message }}
             </p>
-            <!-- <base-button
-              variant="btn"
+            <base-button
+              variant="btn-primary"
               label="Clear Error and Redirect to Home"
               @click="handleClearErrorNavigateToHome"
               @keydown.enter="handleClearErrorNavigateToHome"
+              v-tooltip.bottom="'Go to Home'"
             >
               Go To Home
-            </base-button> -->
+            </base-button>
           </div>
         </template>
       </base-section>
@@ -44,11 +45,15 @@
 <script setup lang="ts">
 // @ts-ignore
 import type { NuxtError } from "#app";
-// import BaseSection from "@/components/layout/global/BaseSection.vue";
-// import BaseButton from "@/components/UI/BaseButton.vue";
+import BaseSection from "@/components/BaseSection.vue";
+import BaseButton from "@/components/BaseButton.vue";
 
 const props = defineProps({
   error: Object as () => NuxtError,
+});
+
+definePageMeta({
+  layout: "error-layout",
 });
 
 // useScriptMatomoAnalytics({

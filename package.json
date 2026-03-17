@@ -14,11 +14,15 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@nuxt/a11y": "1.0.0-alpha.1",
     "@nuxt/fonts": "0.14.0",
+    "@nuxt/hints": "1.0.0",
     "@nuxt/image": "2.0.0",
+    "@nuxt/scripts": "0.13.2",
     "@nuxthub/core": "0.10.7",
     "@tailwindcss/vite": "^4.2.1",
     "@vesp/nuxt-fontawesome": "2.0.0",
+    "floating-vue": "^5.2.2",
     "nuxt": "^4.4.2",
     "tailwindcss": "^4.2.1",
     "vue": "^3.5.30",
