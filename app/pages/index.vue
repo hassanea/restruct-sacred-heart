@@ -1,7 +1,7 @@
 <template>
   <header class="w-full h-auto">
     <nav
-      class="w-full h-auto p-6 bg-primary/95 text-dark flex flex-row flex-wrap justify-center items-center fixed shadow-2xl"
+      class="w-full h-25 p-6 bg-primary/95 text-dark flex flex-row flex-wrap justify-center items-center fixed shadow-2xl font-sans leading-normal text-lg font-bold z-2000 py-[.6rem] px-0 align-middle inset-0 border-t-2 border-solid border-t-dark"
     >
       <ul class="flex flex-row justify-center items-center flex-wrap">
         <li
@@ -13,9 +13,15 @@
             v-if="navItem.to === '/'"
             :to="navItem.to"
             @click.prevent="handleScrollToTop"
+            class="mx-3 hover:text-dark/70 hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78] transition-colors"
             >{{ navItem.name }}</nuxt-link
           >
-          <nuxt-link v-else :to="navItem.to">{{ navItem.name }}</nuxt-link>
+          <nuxt-link
+            v-else
+            :to="navItem.to"
+            class="mx-3 hover:text-dark/70 transition-colors hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78]"
+            >{{ navItem.name }}</nuxt-link
+          >
         </li>
       </ul>
     </nav>
@@ -83,8 +89,9 @@
           For more information and to register go to
           <nuxt-link
             to="https://restructuring.aod.org"
+            v-tooltip.bottom="'AOD Restructuring Info'"
             target="_blank"
-            class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm"
+            class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
             >restructuring.aod.org</nuxt-link
           >. By registering you will help us plan for the sessions and receive a
           copy of the presentation and follow-up survey when all listening
@@ -135,7 +142,7 @@
                       :to="item.url"
                       v-tooltip="'Prayer for AOD Restructuring'"
                       target="_blank"
-                      class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm"
+                      class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
                       >{{ item.urlTitle }}</nuxt-link
                     >
                     {{ item.text }}
@@ -157,7 +164,7 @@
                       :to="item.url"
                       v-tooltip.bottom="'Parish Workbook'"
                       target="_blank"
-                      class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm"
+                      class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
                       >{{ item.urlTitle }}</nuxt-link
                     >
                   </p>

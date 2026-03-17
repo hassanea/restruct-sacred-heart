@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="bg-primary text-dark w-auto h-auto p-10 border-t-2 border-t-dark text-center"
+    class="bg-primary text-dark w-auto h-auto p-10 border-t-2 border-solid border-t-dark text-center"
   >
     <p v-if="copyRightInfo" class="text-lg leading-normal font-bold">
       {{ copyRightInfo }}
@@ -14,7 +14,7 @@ const props = defineProps({
     type: Number,
     required: true,
     validator(value: number) {
-      return value > 0;
+      return Number.isInteger(value);
     },
   },
 });
