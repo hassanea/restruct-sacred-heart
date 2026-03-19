@@ -1,11 +1,53 @@
 <template>
   <header class="w-full h-auto">
     <nav
-      class="w-full h-25 p-6 bg-primary/95 text-dark flex flex-row flex-wrap justify-center items-center fixed shadow-2xl font-sans leading-normal text-lg font-bold z-2000 py-[.6rem] px-0 align-middle inset-0 border-t-2 border-solid border-t-dark"
+      class="w-full p-6 bg-primary/95 text-dark flex flex-col lg:flex-row flex-wrap justify-start items-center fixed shadow-2xl font-sans leading-normal text-lg font-bold z-2000 pt-[5.35rem] lg:py-[.6rem] lg:px-0 align-middle inset-0 border-t-2 border-solid border-t-dark"
+      @keydown.esc="closeMobileNavigation"
+      :class="{
+        'h-100': toggle && showMobileMenu,
+        'h-25': (!toggle && showMobileMenu) || (!toggle && !showMobileMenu),
+      }"
     >
-      <ul class="flex flex-row justify-center items-center flex-wrap">
+      <base-button
+        v-if="showMobileMenu"
+        @click="toggleMobileNavigation"
+        @keydown.enter="toggleMobileNavigation"
+        variant="btn-mobile-nav"
+        label="Mobile Navigation button"
+        title="Mobile menu button"
+        :aria-expanded="setExpanded"
+        :aria-controls="navId"
+      >
+        <template #icon>
+          <font-awesome :icon="setMobileIcon" size="lg" />
+        </template>
+      </base-button>
+      <ul
+        :id="navId"
+        class="flex flex-col lg:flex-row justify-center items-center flex-wrap mx-6 list-none transition-transform"
+        :class="{
+          'translate-0': toggle || !showMobileMenu,
+          '-translate-2499.75': !toggle,
+        }"
+      >
+        <!-- closed state: -translate-2499.75, opened state: translate-0 -->
+        <li class="list-none align-middle">
+          <nuxt-link
+            to="/"
+            class="inline-block mx-auto px-2 py-1.25 align-middle text-xl whitespace-nowrap no-underline lg:mr-4"
+          >
+            <nuxt-img
+              provider="imagekit"
+              src="/heart-n-hands.svg"
+              alt="Heart in hands"
+              width="130"
+              height="32"
+              class="my-0 mx-auto lg:mx-0 block w-[8.13rem] h-auto"
+            />
+          </nuxt-link>
+        </li>
         <li
-          class="list-none"
+          class="list-none align-middle"
           v-for="navItem in navItems"
           :key="navItem.name.toLowerCase()"
         >
@@ -26,21 +68,29 @@
       </ul>
     </nav>
     <div
-      class="w-screen h-[50vh] flex flex-col justify-center items-center bg-[#115B78] text-[#F7F7F7]"
+      class="w-screen h-[60vh] flex flex-col justify-center items-center bg-[#115B78] text-[#F7F7F7] text-center"
     >
       <base-logo class="inline-block align-middle mb-6"></base-logo>
-      <h1 class="text-5xl font-cursive mb-4">{{ mainHead }}</h1>
+      <h1
+        class="text-[1.4rem] md:text-4xl lg:text-[2.5rem] xl:text-5xl font-cursive mt-10 mb-0 ml-0 mr-0 leading-relaxed not-italic font-black tracking-wide line-clamp-2"
+      >
+        <template v-for="item in mainHead" :key="item.toLowerCase()">
+          <span class="block">{{ item }}</span>
+        </template>
+      </h1>
     </div>
   </header>
   <base-main>
-    <base-section class="p-8" id="contacts">
-      <div>
-        <h2 class="text-2xl font-cursive">{{ subHead }}</h2>
+    <base-section class="p-8 border-b-2 border-solid border-dark" id="contacts">
+      <div class="grid grid-cols-1">
+        <h2 class="text-2xl font-cursive font-bold">{{ subHead }}</h2>
         <div
           class="grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center"
         >
           <div class="p-8">
-            <h2 class="text-4xl font-cursive mb-4">{{ pcc.title }}</h2>
+            <h2 class="text-3xl font-cursive mb-4 font-medium">
+              {{ pcc.title }}
+            </h2>
             <ul>
               <li
                 v-for="person in sortedPCCPeople"
@@ -53,7 +103,9 @@
           </div>
 
           <div class="p-8">
-            <h2 class="text-4xl font-cursive mb-4">{{ kpc.title }}</h2>
+            <h2 class="text-3xl font-cursive mb-4 font-medium">
+              {{ kpc.title }}
+            </h2>
             <ul>
               <li
                 v-for="person in sortedKPCPeople"
@@ -68,36 +120,56 @@
       </div>
     </base-section>
 
-    <base-section class="p-8" id="sessions">
-      <div>
-        <h2>{{ sessions.title }}</h2>
-        <p>
-          Every parish in the archdiocese will hold two parish listening
-          sessions. At these sessions, we will review potential pastoral models
-          and provide feedback. Every parish in the Archdiocese of Detroit will
-          experience change in some way because of this process. The feedback
-          being asked for now, is which of the proposed changes would better
-          serve the people of God. Our parish listening sessions will be:
-        </p>
-        <p>
-          <time datetime="2026-05-19T19:00"
-            >Tuesday, May 19 and Thursday, May 21, {{ currentYear }} from 7:00pm
-            to 9:00pm.</time
+    <base-section class="p-12 bg-gray-400" id="sessions">
+      <div class="grid grid-cols-1">
+        <h2 class="font-cursive text-4xl text-center mt-5 mb-12">
+          {{ sessions.title }}
+        </h2>
+        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <template
+            v-for="bullet in sessions.bullets"
+            :key="`bullet-${useId()}`"
           >
-        </p>
-        <p>
-          For more information and to register go to
-          <nuxt-link
-            to="https://restructuring.aod.org"
-            v-tooltip.bottom="'AOD Restructuring Info'"
-            target="_blank"
-            class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
-            >restructuring.aod.org</nuxt-link
-          >. By registering you will help us plan for the sessions and receive a
-          copy of the presentation and follow-up survey when all listening
-          sessions in our planning area are completed. We are part of Planning
-          Area 10.
-        </p>
+            <li
+              v-if="typeof bullet === 'string'"
+              class="list-disc font-medium font-sans text-base lg:text-lg text-left leading-normal not-italic text-pretty"
+            >
+              {{ bullet }}
+            </li>
+            <li
+              v-else
+              class="list-disc font-bold font-sans text-base lg:text-lg text-left leading-normal not-italic"
+            >
+              {{ bullet.text }}
+
+              <template v-if="bullet.dates?.length">
+                <span class="mr-2">
+                  <font-awesome icon="fa-solid fa-calendar" />
+                </span>
+                <p
+                  v-for="date in bullet.dates"
+                  class="italic font-black text-base lg:text-lg text-center md:text-left my-0.5"
+                >
+                  <time :datetime="date">
+                    {{ useLocaleDate(new Date(`${date}`)) }}</time
+                  >
+                  from {{ useLocaleTimeShort(new Date(`${date}`)) }} to
+                  {{ useLocaleTimeShort(new Date(`${bullet.endTime}`)) }}
+                </p>
+              </template>
+              <nuxt-link
+                v-else
+                :to="bullet.url"
+                v-tooltip.bottom="bullet.tooltip"
+                target="_blank"
+                class="p-4 rounded-6xl hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+                ><span class="mr-1">
+                  <font-awesome :icon="bullet.icon" size="1x" /> </span
+                >{{ bullet.urlText }}</nuxt-link
+              >
+            </li>
+          </template>
+        </ul>
       </div>
     </base-section>
     <base-section class="bg-[#DADADA]" id="prep">
@@ -129,27 +201,26 @@
               size="5x"
             />
 
-            <template v-if="item.name === 'Pray'">
-              <base-disclosure
-                :btn-label="item.name"
-                :show="showPray"
-                @handle-show="showPray = !showPray"
-              >
-                <template #default>
-                  <p>
-                    <strong>{{ item.name }}</strong>
-                    <nuxt-link
-                      :to="item.url"
-                      v-tooltip="'Prayer for AOD Restructuring'"
-                      target="_blank"
-                      class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
-                      >{{ item.urlTitle }}</nuxt-link
-                    >
-                    {{ item.text }}
-                  </p>
-                </template>
-              </base-disclosure>
-            </template>
+            <base-disclosure
+              v-if="item.name === 'Pray'"
+              :btn-label="item.name"
+              :show="showPray"
+              @handle-show="showPray = !showPray"
+            >
+              <template #default>
+                <p>
+                  <strong>{{ item.name }}</strong>
+                  <nuxt-link
+                    :to="item.url"
+                    v-tooltip="'Prayer for AOD Restructuring'"
+                    target="_blank"
+                    class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+                    >{{ item.urlTitle }}</nuxt-link
+                  >
+                  {{ item.text }}
+                </p>
+              </template>
+            </base-disclosure>
 
             <template v-if="item.name === 'Review'">
               <base-disclosure
@@ -196,10 +267,37 @@
 <script lang="ts" setup>
 import data from "@/assets/data/data.json";
 import { sortedByLastName } from "#imports";
+import { useLocaleDate, useLocaleTimeShort } from "@/composables/useLocale";
 const { mainHead, subHead, navItems, pcc, kpc, sessions, prep } = data;
+
+// <meta property="og:title" content="Sacred Heart Catholic Church - Auburn Hills, MI | Welcome" />
+// <meta property="og:site_name" content="Sacred Heart Catholic Church's website" />
+// <meta property="og:description" content="Sacred Heart Church's Site" />
+
+useHead({
+  meta: [
+    {
+      name: "description",
+      content:
+        "Archdiocese of Detroit's Restructuring Information for Sacred Heart Catholic Church, Auburn Hills",
+    },
+    {
+      name: "keywords",
+      content:
+        "Sacred Heart Catholic Church, Auburn Hills, Michigan, Archdiocese of Detroit, Restructuring, Archdiocesan Restructuring",
+    },
+    { property: "og:title", content: "" },
+    { property: "og:site:name", content: "" },
+    { property: "og:description", content: "" },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://revamp.esacredheart.org" },
+  ],
+  bodyAttrs: { class: "pt-[5.625rem]" },
+});
 
 const currentYear = ref(0);
 
+const toggle = ref(false);
 const showPray = ref(true);
 const showReview = ref(true);
 const showReflect = ref(true);
@@ -223,6 +321,25 @@ const handleScrollToTop = () => {
     behavior: "smooth",
   });
 };
+
+const showMobileMenu = useMediaQuery("(max-width: 767px)");
+const navId = useId();
+
+const toggleMobileNavigation = () => {
+  toggle.value = !toggle.value;
+};
+
+const closeMobileNavigation = () => {
+  toggle.value = false;
+};
+
+const setMobileIcon = computed(() => {
+  return toggle.value ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+});
+
+const setExpanded = computed(() => {
+  return toggle.value ? true : false;
+});
 </script>
 
 <style lang="css" scoped></style>

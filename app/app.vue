@@ -9,12 +9,6 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-useHead({
-  htmlAttrs: {
-    lang: "en-US",
-  },
-});
-</script>
+<script lang="ts" setup></script>
 
 <style lang="css" scoped></style>

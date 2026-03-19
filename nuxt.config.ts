@@ -13,6 +13,8 @@ export default defineNuxtConfig({
     "@nuxt/hints",
     "@nuxt/scripts",
     "@nuxt/a11y",
+    "@vueuse/nuxt",
+    "@nuxtjs/seo",
   ],
   devServer: {
     host: "0.0.0.0",
@@ -26,19 +28,15 @@ export default defineNuxtConfig({
         "@fortawesome/pro-solid-svg-icons",
       ],
     },
-    server: {
-      hmr: {
-        protocol: "http",
-        host: "localhost",
-        clientPort: 3000,
-        port: 3000,
-      },
-    },
   },
   css: ["./app/assets/css/main.css"],
   hub: {},
   runtimeConfig: {
     public: {},
+  },
+  site: {
+    url: "https://revamp.esacredheart.org",
+    name: "Sacred Heart Catholic Church - Auburn Hills, MI | Archdiocesan Restructuring",
   },
   fontawesome: {
     proIcons: {
@@ -46,13 +44,16 @@ export default defineNuxtConfig({
       regular: ["FaceThinking"],
     },
     icons: {
-      solid: ["Bomb"],
+      solid: ["Bars", "Bomb", "BookOpen", "Calendar", "Church", "Xmark"],
     },
   },
   scripts: {
     registry: {
       googleAnalytics: {
         id: "G-S1KMV7ZRS7",
+      },
+      clarity: {
+        id: "vxrcwqbtcq",
       },
     },
   },
@@ -73,6 +74,10 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: "en-US",
+        dir: "ltr",
+      },
       title:
         "Sacred Heart Catholic Church - Auburn Hills, MI | Archdiocesan Restructuring",
       meta: [
@@ -153,33 +158,6 @@ export default defineNuxtConfig({
     },
   },
 });
-
-// <meta name="description" content="Sacred Heart Church's Site" />
-// <meta name="keywords" content="Sacred Heart Catholic Church, Auburn Hills, Michigan" />
-// <meta property="og:title" content="Sacred Heart Catholic Church - Auburn Hills, MI | Welcome" />
-// <meta property="og:site_name" content="Sacred Heart Catholic Church's website" />
-// <meta property="og:type" content="website" />
-// <meta property="og:description" content="Sacred Heart Church's Site" />
-// <meta property="og:url" content="https://www.esacredheart.org" />
-// <meta property="og:image" content="https://images.esacredheart.org/sacred-heart-logo.jpg" />
-// <meta property="og:image:width" content="1200" />
-// <meta property="og:image:height" content="630" />
-// <meta property="og:locale" content="en_US" />
-// <meta property="og:phone_number" content="+1-248-852-4170" />
-// <meta property="og:email" content="sacredheartauburnhills@gmail.com" />
-// <meta property="og:street-address" content="3400 S Adams Road" />
-// <meta property="og:locality" content="Auburn Hills" />
-// <meta property="og:region" content="MI" />
-// <meta property="og:postal-code" content="48326" />
-// <meta property="og:country-name" content="USA" />
-// <meta property="fb:app_id" content="818889048795596" />
-// <meta property="fb:page_id" content="114688866599926" />
-// <meta name="twitter:card" content="summary" />
-// <meta name="twitter:site" content="@sacredHeart7009" />
-// <meta name="twitter:url" content="https://www.esacredheart.org" />
-// <meta name="twitter:title" content="Sacred Heart Catholic Church" />
-// <meta name="twitter:description" content="Sacred Heart Catholic Church's Site" />
-// <meta name="twitter:image" content="https://images.esacredheart.org/twitter-card-logo.jpg" />
 
 // <link rel="preconnect" href="https://fonts.googleapis.com" />
 // <link rel="dns-prefetch" href="https://fonts.googleapis.com" />

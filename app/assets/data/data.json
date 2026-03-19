@@ -1,5 +1,5 @@
 {
-  "mainHead": "AOD Restructuring at \n Sacred Heart—Auburn Hills",
+  "mainHead": ["AOD Restructuring at", "Sacred Heart—Auburn Hills"],
   "subHead": "Who is involved in our Parish?",
   "navItems": [
     {
@@ -26,15 +26,31 @@
   },
   "sessions": {
     "title": "Parish Listening Sessions",
-    "dates": ["2026-05-19T19:00:00", "2026-05-21T19:00:00"],
-    "endTime": "9:00",
     "bullets": [
       "Two parish listening sessions will be held in every parish in the Archdiocese.",
-      "At these sessions will be a review of pontential pastoral models along with feedback.",
+      "At these sessions will be a review of potential pastoral models along with feedback.",
       "Every parish in the AOD will experience change in some way because of the process.",
       "Feedback will identify which proposed changes would better serve the people of God.",
-      "Our parish listening sessions will be:",
-      ""
+      {
+        "text": "Our parish listening sessions will be:",
+        "dates": ["2026-05-19T19:00:00", "2026-05-21T19:00:00"],
+        "endTime": "2026-05-19T21:00:00"
+      },
+      {
+        "text": "For more information go to",
+        "tooltip": "AOD Restructuring Info",
+        "icon": "fa-solid fa-book-open",
+        "url": "http://restructuring.aod.org",
+        "urlText": "restructuring.aod.org"
+      },
+      {
+        "text": "Sign up for a Session:",
+        "tooltip": "Register for a Session",
+        "icon": "fa-solid fa-church",
+        "url": "https://www.cognitoforms.com/ArchdioceseOfDetroit2/ParishListeningSessionRegistration?qr",
+        "urlText": "Register"
+      },
+      "Register to help us plan for the sessions and receive a copy of the presentation and follow-up survey once all listening sessions in our area are completed. We are part of Planning Area 10."
     ]
   },
   "prep": {

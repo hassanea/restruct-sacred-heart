@@ -113,3 +113,54 @@
               </template>
             </base-disclosure>
           </li>
+
+
+
+
+                  <p>
+          For more information go to
+          <nuxt-link
+            to="https://restructuring.aod.org"
+            v-tooltip.bottom="'AOD Restructuring Info'"
+            target="_blank"
+            class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+          >
+            <span class="mr-1">
+              <font-awesome icon="fa-solid fa-book-open" /> </span
+            >restructuring.aod.org</nuxt-link
+          >.
+          <nuxt-link
+            to="https://www.cognitoforms.com/ArchdioceseOfDetroit2/ParishListeningSessionRegistration?qr"
+            v-tooltip.right="'Register for a Session'"
+            target="_blank"
+            class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+            ><span class="me-2"
+              ><font-awesome icon="fa-solid fa-church" /> </span
+            >Sign up for Session</nuxt-link
+          >
+          By registering you will help us plan for the sessions and receive a
+          copy of the presentation and follow-up survey when all listening
+          sessions in our planning area are completed. We are part of Planning
+          Area 10.
+        </p> -->
+
+
+// <meta property="og:image" content="https://images.esacredheart.org/sacred-heart-logo.jpg" />
+// <meta property="og:image:width" content="1200" />
+// <meta property="og:image:height" content="630" />
+// <meta property="og:locale" content="en_US" />
+// <meta property="og:phone_number" content="+1-248-852-4170" />
+// <meta property="og:email" content="sacredheartauburnhills@gmail.com" />
+// <meta property="og:street-address" content="3400 S Adams Road" />
+// <meta property="og:locality" content="Auburn Hills" />
+// <meta property="og:region" content="MI" />
+// <meta property="og:postal-code" content="48326" />
+// <meta property="og:country-name" content="USA" />
+
+
+// <meta name="twitter:card" content="summary" />
+// <meta name="twitter:site" content="@sacredHeart7009" />
+// <meta name="twitter:url" content="https://www.esacredheart.org" />
+// <meta name="twitter:title" content="Sacred Heart Catholic Church" />
+// <meta name="twitter:description" content="Sacred Heart Catholic Church's Site" />
+// <meta name="twitter:image" content="https://images.esacredheart.org/twitter-card-logo.jpg" />

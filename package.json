@@ -20,11 +20,13 @@
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.2",
     "@nuxthub/core": "0.10.7",
-    "@tailwindcss/vite": "^4.2.1",
+    "@nuxtjs/seo": "^3.4.0",
+    "@tailwindcss/vite": "^4.2.2",
     "@vesp/nuxt-fontawesome": "2.0.0",
+    "@vueuse/nuxt": "14.2.1",
     "floating-vue": "^5.2.2",
     "nuxt": "^4.4.2",
-    "tailwindcss": "^4.2.1",
+    "tailwindcss": "^4.2.2",
     "vue": "^3.5.30",
     "vue-router": "^5.0.3"
   },
@@ -34,6 +36,6 @@
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@fortawesome/pro-regular-svg-icons": "^7.2.0",
     "@fortawesome/pro-solid-svg-icons": "^7.2.0",
-    "wrangler": "^4.74.0"
+    "wrangler": "^4.75.0"
   }
 }

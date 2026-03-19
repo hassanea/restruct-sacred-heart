@@ -6,12 +6,12 @@
       >
         <template #default>
           <div class="flex flex-col items-center justify-center">
-            <font-awesome
+            <lazy-font-awesome
               v-if="error?.status === 500"
               class="text-dark rounded inline-block align-middle md:text-4xl text-3xl"
               icon="fa-solid fa-bomb"
             />
-            <font-awesome
+            <lazy-font-awesome
               v-else
               class="text-dark rounded inline-block align-middle md:text-4xl text-3xl"
               icon="fa-solid fa-do-not-enter"
