@@ -24,10 +24,10 @@
     </base-button>
     <ul
       :id="navId"
-      class="flex flex-col md:flex-row justify-center items-center flex-wrap mx-0 md:mx-4 lg:mx-5 xl:mx-6 list-none transition-transform"
+      class="flex flex-col md:flex-row justify-center items-center flex-wrap md:static md:translate-0 mx-0 md:mx-4 lg:mx-5 xl:mx-6 list-none transition-transform"
       :class="{
-        'translate-0': toggle || !showMobileMenu,
-        '-translate-2499.75': !toggle && showMobileMenu,
+        'absolute translate-0': toggle,
+        'absolute -translate-2499.75': !toggle,
       }"
     >
       <!-- closed state: -translate-2499.75, opened state: translate-0 -->
