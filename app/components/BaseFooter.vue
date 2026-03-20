@@ -1,8 +1,11 @@
 <template>
   <footer
-    class="bg-primary text-dark w-auto h-auto p-10 border-t-2 border-solid border-t-dark text-center"
+    class="bg-primary font-sans text-dark w-full h-auto flex flex-row justify-center items-center p-9 md:p-10 lg:p-12 border-t-2 border-solid border-t-dark"
   >
-    <p v-if="copyRightInfo" class="text-lg leading-normal font-bold">
+    <p
+      v-if="copyRightInfo"
+      class="text-[0.875rem] text-pretty text-center md:text-base lg:text-lg xl:text-xl leading-normal font-bold not-italic"
+    >
       {{ copyRightInfo }}
     </p>
   </footer>

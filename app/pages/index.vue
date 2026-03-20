@@ -1,72 +1,14 @@
 <template>
   <header class="w-full h-auto">
-    <nav
-      class="w-full p-6 bg-primary/95 text-dark flex flex-col lg:flex-row flex-wrap justify-start items-center fixed shadow-2xl font-sans leading-normal text-lg font-bold z-2000 pt-[5.35rem] lg:py-[.6rem] lg:px-0 align-middle inset-0 border-t-2 border-solid border-t-dark"
-      @keydown.esc="closeMobileNavigation"
-      :class="{
-        'h-100': toggle && showMobileMenu,
-        'h-25': (!toggle && showMobileMenu) || (!toggle && !showMobileMenu),
-      }"
+    <base-nav-bar
+      @handle-toggle="handleNavBarToggle"
+      @handle-close="handleNavBarClose"
+      :toggle
+      label="Main navigation"
+      logo="/heart-n-hands.svg"
+      :navItems
     >
-      <base-button
-        v-if="showMobileMenu"
-        @click="toggleMobileNavigation"
-        @keydown.enter="toggleMobileNavigation"
-        variant="btn-mobile-nav"
-        label="Mobile Navigation button"
-        title="Mobile menu button"
-        :aria-expanded="setExpanded"
-        :aria-controls="navId"
-      >
-        <template #icon>
-          <font-awesome :icon="setMobileIcon" size="lg" />
-        </template>
-      </base-button>
-      <ul
-        :id="navId"
-        class="flex flex-col lg:flex-row justify-center items-center flex-wrap mx-6 list-none transition-transform"
-        :class="{
-          'translate-0': toggle || !showMobileMenu,
-          '-translate-2499.75': !toggle,
-        }"
-      >
-        <!-- closed state: -translate-2499.75, opened state: translate-0 -->
-        <li class="list-none align-middle">
-          <nuxt-link
-            to="/"
-            class="inline-block mx-auto px-2 py-1.25 align-middle text-xl whitespace-nowrap no-underline lg:mr-4"
-          >
-            <nuxt-img
-              provider="imagekit"
-              src="/heart-n-hands.svg"
-              alt="Heart in hands"
-              width="130"
-              height="32"
-              class="my-0 mx-auto lg:mx-0 block w-[8.13rem] h-auto"
-            />
-          </nuxt-link>
-        </li>
-        <li
-          class="list-none align-middle"
-          v-for="navItem in navItems"
-          :key="navItem.name.toLowerCase()"
-        >
-          <nuxt-link
-            v-if="navItem.to === '/'"
-            :to="navItem.to"
-            @click.prevent="handleScrollToTop"
-            class="mx-3 hover:text-dark/70 hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78] transition-colors"
-            >{{ navItem.name }}</nuxt-link
-          >
-          <nuxt-link
-            v-else
-            :to="navItem.to"
-            class="mx-3 hover:text-dark/70 transition-colors hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78]"
-            >{{ navItem.name }}</nuxt-link
-          >
-        </li>
-      </ul>
-    </nav>
+    </base-nav-bar>
     <div
       class="w-screen h-[60vh] flex flex-col justify-center items-center bg-[#115B78] text-[#F7F7F7] text-center"
     >
@@ -270,10 +212,6 @@ import { sortedByLastName } from "#imports";
 import { useLocaleDate, useLocaleTimeShort } from "@/composables/useLocale";
 const { mainHead, subHead, navItems, pcc, kpc, sessions, prep } = data;
 
-// <meta property="og:title" content="Sacred Heart Catholic Church - Auburn Hills, MI | Welcome" />
-// <meta property="og:site_name" content="Sacred Heart Catholic Church's website" />
-// <meta property="og:description" content="Sacred Heart Church's Site" />
-
 useHead({
   meta: [
     {
@@ -286,9 +224,9 @@ useHead({
       content:
         "Sacred Heart Catholic Church, Auburn Hills, Michigan, Archdiocese of Detroit, Restructuring, Archdiocesan Restructuring",
     },
-    { property: "og:title", content: "" },
-    { property: "og:site:name", content: "" },
-    { property: "og:description", content: "" },
+    // { property: "og:title", content: "Sacred Heart Catholic Church Restructuring" },
+    // { property: "og:site:name", content: "" },
+    // { property: "og:description", content: "" },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://revamp.esacredheart.org" },
   ],
@@ -314,32 +252,13 @@ const sortedKPCPeople = computed(() => {
   return sortedByLastName(kpc.people);
 });
 
-const handleScrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-};
-
-const showMobileMenu = useMediaQuery("(max-width: 767px)");
-const navId = useId();
-
-const toggleMobileNavigation = () => {
+const handleNavBarToggle = () => {
   toggle.value = !toggle.value;
 };
 
-const closeMobileNavigation = () => {
+const handleNavBarClose = () => {
   toggle.value = false;
 };
-
-const setMobileIcon = computed(() => {
-  return toggle.value ? "fa-solid fa-xmark" : "fa-solid fa-bars";
-});
-
-const setExpanded = computed(() => {
-  return toggle.value ? true : false;
-});
 </script>
 
 <style lang="css" scoped></style>

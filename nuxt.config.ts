@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+
   modules: [
     "@nuxthub/core",
     "@vesp/nuxt-fontawesome",
@@ -15,10 +16,13 @@ export default defineNuxtConfig({
     "@nuxt/a11y",
     "@vueuse/nuxt",
     "@nuxtjs/seo",
+    "@sentry/nuxt/module",
   ],
+
   devServer: {
     host: "0.0.0.0",
   },
+
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
@@ -29,15 +33,19 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   css: ["./app/assets/css/main.css"],
   hub: {},
+
   runtimeConfig: {
     public: {},
   },
+
   site: {
     url: "https://revamp.esacredheart.org",
     name: "Sacred Heart Catholic Church - Auburn Hills, MI | Archdiocesan Restructuring",
   },
+
   fontawesome: {
     proIcons: {
       solid: ["DoNotEnter"],
@@ -47,6 +55,7 @@ export default defineNuxtConfig({
       solid: ["Bars", "Bomb", "BookOpen", "Calendar", "Church", "Xmark"],
     },
   },
+
   scripts: {
     registry: {
       googleAnalytics: {
@@ -57,6 +66,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   image: {
     imagekit: {
       baseURL: "https://images.esacredheart.org",
@@ -72,6 +82,7 @@ export default defineNuxtConfig({
       "2xl": 1536,
     },
   },
+
   app: {
     head: {
       htmlAttrs: {
@@ -154,31 +165,28 @@ export default defineNuxtConfig({
           sizes: "192x192",
           type: "image/png",
         },
+        {
+          rel: "dns-prefetch",
+          href: "https://www.clarity.ms/",
+        },
+        {
+          rel: "dns-prefetch",
+          href: "https://fonts.googleapis.com",
+        },
+        {
+          rel: "dns-prefetch",
+          href: "https://fonts.gstatic.com",
+        },
       ],
     },
   },
+
+  sentry: {
+    org: "ev-corp",
+    project: "restruct-sacred-heart",
+  },
+
+  sourcemap: {
+    client: "hidden",
+  },
 });
-
-// <link rel="preconnect" href="https://fonts.googleapis.com" />
-// <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-// <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-// <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin />
-
-// <link rel="dns-prefetch" href="https://www.clarity.ms/" />
-
-// <script>
-//     var n,
-//         r,
-//         c,
-//         e = window,
-//         t = document,
-//         a = "script";
-//     (e[(n = "clarity")] =
-//         e[n] ||
-//         function () {
-//             (e[n].q = e[n].q || []).push(arguments);
-//         }),
-//         ((r = t.createElement(a)).async = 1),
-//         (r.src = "https://www.clarity.ms/tag/9bz6xz4nzw"),
-//         (c = t.getElementsByTagName(a)[0]).parentNode.insertBefore(r, c);
-// </script>

@@ -64,11 +64,11 @@ const buttonClasses = computed(() => {
 */
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .btn-mobile-nav {
   display: inline-block;
   position: absolute;
-  top: 10%;
+  top: 13%;
   right: 1%;
   z-index: 1026;
   vertical-align: middle;
@@ -76,33 +76,36 @@ const buttonClasses = computed(() => {
   height: 3rem;
   margin: 1rem 0;
   padding: 0.5rem;
-  background: #b8390e;
-  color: #000;
-  /* border: 2px solid #ffff00; */
-  border-radius: 100%;
+  background: #3e3a44;
+  color: #fff;
+  border: 2px solid #c2262b;
+  border-radius: 10px;
   cursor: pointer;
   -webkit-transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
-/* // &:hover {
-  //   color: $primary-color;
-  //   background: $text-color;
-  // }
-  &:active {
-    -webkit-box-shadow: 4px 4px 6px #fff599;
-    box-shadow: 4px 4px 6px #fff599;
-  }
-  &:focus {
-    outline: 0;
-    background: #b3ffff;
-    // color: $primary-color;
-  } */
+.btn-mobile-nav:hover {
+  background: #fff;
+  color: #3e3a44;
+}
+
+.btn-mobile-nav:active {
+  box-shadow: 4px 4px 6px #c2262b;
+}
+
+.btn-mobile-nav:focus {
+  outline: 0;
+  /* background: #b; */
+  /* color: $primary-color;  */
+}
 
 /* &.active {
     left: 1%;
   } */
+</style>
 
+<style lang="css">
 .box-shadow:active {
   box-shadow: 0 0 5px 5px #2c3e4c;
 }
