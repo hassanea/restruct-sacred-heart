@@ -27,7 +27,7 @@
       class="flex flex-col md:flex-row justify-center items-center flex-wrap mx-0 md:mx-4 lg:mx-5 xl:mx-6 list-none transition-transform"
       :class="{
         'translate-0': toggle || !showMobileMenu,
-        '-translate-2499.75': !toggle,
+        '-translate-2499.75': !toggle && showMobileMenu,
       }"
     >
       <!-- closed state: -translate-2499.75, opened state: translate-0 -->
@@ -106,12 +106,10 @@ const navId = useId();
 
 const toggleMobileNavigation = () => {
   emit("handle-toggle");
-  console.log("Toggled!");
 };
 
 const closeMobileNavigation = () => {
   emit("handle-close");
-  console.log("Closed");
 };
 
 const setMobileIcon = computed(() => {
