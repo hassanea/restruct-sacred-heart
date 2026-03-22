@@ -1,4 +1,10 @@
 {
+  "meta": {
+    "description": "Archdiocese of Detroit's Restructuring Information for Sacred Heart Catholic Church, Auburn Hills, MI",
+    "keywords": "Sacred Heart Catholic Church, Auburn Hills, Michigan, Archdiocese of Detroit, Restructuring, Archdiocesan Restructuring",
+    "type": "website",
+    "url": "https://revamp.esacredheart.org/"
+  },
   "mainHead": ["AOD Restructuring at", "Sacred Heart—Auburn Hills"],
   "subHead": "Who is involved in our Parish?",
   "navItems": [
@@ -60,22 +66,25 @@
         "name": "Pray",
         "image": "/hands-praying.svg",
         "url": "https://restructuring.aod.org/#prayer",
-        "urlTitle": " the Prayer for Restructuring the Archdiocese of Detroit",
-        "text": "as we go through this process. Intercede for those preparing for the listening sessions and those who will attend and provide feedback."
+        "urlTitle": " the Prayer for Restructuring the AOD ",
+        "text": "as we go through this process. Intercede for those preparing for the listening sessions, those who will attend and provide feedback.",
+        "mobileText": " as we go through this process."
       },
       {
         "name": "Review",
         "image": "fa-regular fa-face-thinking",
         "url": "https://restructuring.aod.org/parish-workbooks",
         "urlTitle": "here.",
-        "text": "Sacred Heart’s Parish Workbook and the workbooks of any other parish in Planning Area 10 that you want to know more about. These documents were compiled to provide transparency and inform the restructuring process. Understanding this information helps each of us enter this time of discernment with a deeper sense of awareness around the need for restructuring. Workbooks for all parishes in the AOD can be found at"
+        "text": " Sacred Heart’s Parish Workbook and the workbooks of any other parish in Planning Area 10 that you want to know more about. These documents were compiled to provide transparency and inform the restructuring process. Understanding this information helps each of us enter this time of discernment with a deeper sense of awareness around the need for restructuring. Workbooks for all parishes in the AOD can be found ",
+        "mobileText": " our Parish Workbook or any Planning Area 10 Parish Workbooks "
       },
       {
         "name": "Reflect",
         "image": "/personal-reflection.svg",
         "url": "",
         "urlTitle": "",
-        "text": " and take time to name your feelings about restructuring. Are you feeling anxious? Fearful? Angry? Excited? Hopeful? Ask the Lord to open your heart to be receptive to where he is leading our parish and the entire Archdiocese of Detroit. Be prepared to share your thoughts about how the proposed models will impact the AOD vision of Vibrant Parishes, Flourishing Priests and being Mission Ready."
+        "text": " and take time to name your feelings about restructuring. Are you feeling anxious? Fearful? Angry? Excited? Hopeful? Ask the Lord to open your heart to be receptive to where he is leading our parish and the entire Archdiocese of Detroit. Be prepared to share your thoughts about how the proposed models will impact the AOD vision of Vibrant Parishes, Flourishing Priests and being Mission Ready.",
+        "mobileText": " and take time to name your feelings about restructuring."
       }
     ]
   }

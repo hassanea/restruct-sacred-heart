@@ -23,39 +23,50 @@
     </div>
   </header>
   <base-main>
-    <base-section class="p-8 border-b-2 border-solid border-dark" id="contacts">
+    <base-section
+      class="p-13 border-b-2 border-solid border-dark"
+      id="contacts"
+    >
       <div class="grid grid-cols-1">
-        <h2 class="text-2xl font-cursive font-bold">{{ subHead }}</h2>
+        <h2
+          class="text-xl md:text-2xl leading-normal font-cursive font-bold text-center md:text-left not-italic text-pretty"
+        >
+          {{ subHead }}
+        </h2>
         <div
           class="grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center"
         >
           <div class="p-8">
-            <h2 class="text-3xl font-cursive mb-4 font-medium">
+            <h2
+              class="text-2xl md:text-[1.625rem] lg:text-[1.75rem] xl:text-3xl leading-normal font-cursive mb-4 font-medium text-left"
+            >
               {{ pcc.title }}
             </h2>
             <ul>
-              <li
+              <base-list-item
                 v-for="person in sortedPCCPeople"
                 :key="person.toLowerCase()"
-                class="list-none font-sans font-semibold my-2"
+                variant="contact"
               >
                 {{ person }}
-              </li>
+              </base-list-item>
             </ul>
           </div>
 
           <div class="p-8">
-            <h2 class="text-3xl font-cursive mb-4 font-medium">
+            <h2
+              class="text-2xl md:text-[1.625rem] lg:text-[1.75rem] xl:text-3xl leading-normal font-cursive mb-4 font-medium text-left text-pretty"
+            >
               {{ kpc.title }}
             </h2>
             <ul>
-              <li
+              <base-list-item
                 v-for="person in sortedKPCPeople"
                 :key="person.toLowerCase()"
-                class="list-none font-sans font-semibold my-2"
+                variant="contact"
               >
                 {{ person }}
-              </li>
+              </base-list-item>
             </ul>
           </div>
         </div>
@@ -67,7 +78,7 @@
         <h2 class="font-cursive text-4xl text-center mt-5 mb-12">
           {{ sessions.title }}
         </h2>
-        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <base-list type="ul" variant="session-list">
           <template
             v-for="bullet in sessions.bullets"
             :key="`bullet-${useId()}`"
@@ -111,21 +122,25 @@
               >
             </li>
           </template>
-        </ul>
+        </base-list>
       </div>
     </base-section>
-    <base-section class="bg-[#DADADA]" id="prep">
-      <div class="p-40">
+    <base-section
+      class="bg-[#DADADA] py-12 px-5 md:py-15 md:px-0 lg:py-18 xl:p-22.5"
+      id="prep"
+    >
+      <div class="grid grid-cols-1">
         <h3
-          class="font-cursive text-3xl leading-normal font-bold not-italic text-center mb-10"
+          class="font-cursive text-2xl md:text-3xl leading-normal font-bold not-italic text-center mb-8 md:mb-9 lg:mb-10"
         >
           {{ prep.title }}
         </h3>
-        <ol class="grid grid-cols-1 xl:grid-cols-3 xl:max-w-400 gap-12 mx-auto">
-          <li
+
+        <base-list type="ol" variant="prep-list">
+          <base-list-item
             v-for="item in prep.bullets"
             :key="item.name.toLowerCase()"
-            class="text-center list-none"
+            variant="prep"
           >
             <nuxt-img
               provider="imagekit"
@@ -156,10 +171,15 @@
                     :to="item.url"
                     v-tooltip="'Prayer for AOD Restructuring'"
                     target="_blank"
-                    class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+                    class="hover:bg-[#2C3E4C] hover:text-white hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
                     >{{ item.urlTitle }}</nuxt-link
                   >
-                  {{ item.text }}
+                  <span class="hidden md:inline">
+                    {{ item.text }}
+                  </span>
+                  <span class="list-item md:hidden">
+                    {{ item.mobileText }}
+                  </span>
                 </p>
               </template>
             </base-disclosure>
@@ -172,12 +192,19 @@
               >
                 <template #default>
                   <p>
-                    <strong>{{ item.name }}</strong> {{ item.text }}
+                    <strong>{{ item.name }}</strong>
+                    <span class="hidden md:inline">
+                      {{ item.text }}
+                    </span>
+                    <span class="list-item md:hidden">
+                      {{ item.mobileText }}
+                    </span>
+
                     <nuxt-link
                       :to="item.url"
                       v-tooltip.bottom="'Parish Workbook'"
                       target="_blank"
-                      class="hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+                      class="hover:bg-[#2C3E4C] hover:text-white hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
                       >{{ item.urlTitle }}</nuxt-link
                     >
                   </p>
@@ -193,13 +220,19 @@
               >
                 <template #default>
                   <p>
-                    <strong>{{ item.name }}</strong> {{ item.text }}
+                    <strong>{{ item.name }}</strong>
+                    <span class="hidden md:inline">
+                      {{ item.text }}
+                    </span>
+                    <span class="list-item md:hidden">
+                      {{ item.mobileText }}
+                    </span>
                   </p>
                 </template>
               </base-disclosure>
             </template>
-          </li>
-        </ol>
+          </base-list-item>
+        </base-list>
       </div>
     </base-section>
   </base-main>
@@ -208,33 +241,27 @@
 
 <script lang="ts" setup>
 import data from "@/assets/data/data.json";
-import { sortedByLastName } from "#imports";
 import { useLocaleDate, useLocaleTimeShort } from "@/composables/useLocale";
-const { mainHead, subHead, navItems, pcc, kpc, sessions, prep } = data;
+import { sortedByLastName } from "@/utils/index";
+const { meta, mainHead, subHead, navItems, pcc, kpc, sessions, prep } = data;
 
 useHead({
   meta: [
     {
       name: "description",
-      content:
-        "Archdiocese of Detroit's Restructuring Information for Sacred Heart Catholic Church, Auburn Hills",
+      content: meta.description,
     },
     {
       name: "keywords",
-      content:
-        "Sacred Heart Catholic Church, Auburn Hills, Michigan, Archdiocese of Detroit, Restructuring, Archdiocesan Restructuring",
+      content: meta.keywords,
     },
-    // { property: "og:title", content: "Sacred Heart Catholic Church Restructuring" },
-    // { property: "og:site:name", content: "" },
-    // { property: "og:description", content: "" },
-    { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://revamp.esacredheart.org" },
+    { property: "og:type", content: meta.type },
+    { property: "og:url", content: meta.url },
   ],
   bodyAttrs: { class: "pt-[5.625rem]" },
 });
 
 const currentYear = ref(0);
-
 const toggle = ref(false);
 const showPray = ref(true);
 const showReview = ref(true);
@@ -244,14 +271,6 @@ onMounted(() => {
   currentYear.value = new Date().getFullYear();
 });
 
-const sortedPCCPeople = computed(() => {
-  return sortedByLastName(pcc.people);
-});
-
-const sortedKPCPeople = computed(() => {
-  return sortedByLastName(kpc.people);
-});
-
 const handleNavBarToggle = () => {
   toggle.value = !toggle.value;
 };
@@ -259,6 +278,14 @@ const handleNavBarToggle = () => {
 const handleNavBarClose = () => {
   toggle.value = false;
 };
+
+const sortedPCCPeople = computed(() => {
+  return sortedByLastName(pcc.people);
+});
+
+const sortedKPCPeople = computed(() => {
+  return sortedByLastName(kpc.people);
+});
 </script>
 
 <style lang="css" scoped></style>

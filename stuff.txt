@@ -164,3 +164,8 @@
 // <meta name="twitter:title" content="Sacred Heart Catholic Church" />
 // <meta name="twitter:description" content="Sacred Heart Catholic Church's Site" />
 // <meta name="twitter:image" content="https://images.esacredheart.org/twitter-card-logo.jpg" />
+
+
+  // { property: "og:title", content: "Sacred Heart Catholic Church Restructuring" },
+  // { property: "og:site:name", content: "" },
+  // { property: "og:description", content: "" },

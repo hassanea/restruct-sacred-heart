@@ -56,12 +56,9 @@ definePageMeta({
   layout: "error-layout",
 });
 
-// useScriptMatomoAnalytics({
-//   matomoUrl: "https://www.eahassan.com/matomo/",
-//   siteId: "1",
-//   trackPageView: true,
-//   enableLinkTracking: true,
-// });
+const { proxy } = useScriptClarity();
+
+proxy.clarity("Error occurred", `error: ${props.error?.status}`);
 
 const handleClearErrorNavigateToHome = () => {
   clearError({ redirect: "/" });

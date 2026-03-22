@@ -3,10 +3,7 @@
     class="w-full md:p-2.5 p-6 bg-primary/95 text-dark flex flex-col md:flex-row flex-wrap justify-center lg:justify-start items-center fixed shadow-2xl font-sans leading-normal text-lg font-bold z-2000 lg:py-[.6rem] lg:px-0 align-middle inset-0 border-t-2 border-solid border-t-dark"
     @keydown.esc="closeMobileNavigation"
     :aria-label="label"
-    :class="{
-      'h-100': toggle && showMobileMenu,
-      'h-25': (!toggle && showMobileMenu) || (!toggle && !showMobileMenu),
-    }"
+    :class="navbarClasses"
   >
     <base-button
       v-if="showMobileMenu"
@@ -24,17 +21,13 @@
     </base-button>
     <ul
       :id="navId"
-      class="flex flex-col md:flex-row justify-center items-center flex-wrap md:static md:translate-0 mx-0 md:mx-4 lg:mx-5 xl:mx-6 list-none transition-transform"
-      :class="{
-        'absolute translate-0': toggle,
-        'absolute -translate-2499.75': !toggle,
-      }"
+      class="flex flex-col md:flex-row justify-center items-center flex-wrap md:static md:translate-0 mx-0 md:mx-4 lg:mx-5 xl:mx-6 list-none transition-transform navbar-transition"
+      :class="navbarNavClasses"
     >
-      <!-- closed state: -translate-2499.75, opened state: translate-0 -->
       <li class="list-none align-middle">
         <nuxt-link
           to="/"
-          class="inline-block mx-auto px-2 py-1.25 align-middle text-xl whitespace-nowrap no-underline lg:mr-4"
+          class="inline-block mx-auto px-1 md:px-2 py-0.5 md:py-1.25 align-middle text-xl whitespace-nowrap no-underline md:mr-4"
         >
           <nuxt-img
             provider="imagekit"
@@ -47,7 +40,7 @@
         </nuxt-link>
       </li>
       <li
-        class="list-none align-middle"
+        class="list-none align-middle my-4 md:my-0"
         v-for="navItem in navItems"
         :key="navItem.name.toLowerCase()"
       >
@@ -55,13 +48,13 @@
           v-if="navItem.to === '/'"
           :to="navItem.to"
           @click.prevent="handleScrollToTop"
-          class="mx-3 hover:text-dark/70 hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78] transition-colors"
+          class="mx-2 md:mx-3 hover:text-dark/70 hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78] transition-colors"
           >{{ navItem.name }}</nuxt-link
         >
         <nuxt-link
           v-else
           :to="navItem.to"
-          class="mx-3 hover:text-dark/70 transition-colors hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78]"
+          class="mx-2 md:mx-3 hover:text-dark/70 transition-colors hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78]"
           >{{ navItem.name }}</nuxt-link
         >
       </li>
@@ -112,6 +105,20 @@ const closeMobileNavigation = () => {
   emit("handle-close");
 };
 
+const navbarClasses = computed(() => {
+  return {
+    "h-100": props.toggle && showMobileMenu,
+    "h-25":
+      (!props.toggle && showMobileMenu) || (!props.toggle && !showMobileMenu),
+  };
+});
+const navbarNavClasses = computed(() => {
+  return {
+    "absolute translate-0": props.toggle,
+    "absolute -translate-2499.75": !props.toggle,
+  };
+});
+
 const setMobileIcon = computed(() => {
   return props.toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars";
 });
@@ -121,4 +128,8 @@ const setExpanded = computed(() => {
 });
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.navbar-transition {
+  transition-timing-function: cubic-bezier(1, 2.01, 0.18, -0.91);
+}
+</style>
