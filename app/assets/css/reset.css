@@ -3,8 +3,6 @@
   *::after,
   *::before {
     box-sizing: border-box;
-    /* margin: 0;
-  padding: 0; */
   }
   html {
     line-height: 1.15;
@@ -291,14 +289,59 @@
         stroke,
         -webkit-text-decoration-color;
       transition-property:
-        color, background-color, border-color, outline-color,
-        fill, stroke, -webkit-text-decoration-color;
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        fill,
+        stroke,
+        -webkit-text-decoration-color;
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        fill,
+        stroke,
+        -webkit-text-decoration-color;
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        fill,
+        stroke,
+        -webkit-text-decoration-color;
       transition-property:
         color, background-color, border-color, outline-color,
         text-decoration-color, fill, stroke;
       transition-property:
-        color, background-color, border-color, outline-color,
-        text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        -webkit-text-decoration-color;
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        -webkit-text-decoration-color;
+      transition-property:
+        color,
+        background-color,
+        border-color,
+        outline-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        -webkit-text-decoration-color;
       transition-property:
         color,
         background-color,

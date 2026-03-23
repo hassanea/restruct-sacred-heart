@@ -1,8 +1,7 @@
 <template>
   <svg
     viewBox="0 0 484 286.66666"
-    :width="size.width"
-    :height="size.height"
+    class="w-45.25 h-27.75 md:w-52.75 md:h-35.25 lg:w-60.25 lg:h-37.75 xl:w-62.5 xl:h-37.75"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g transform="matrix(.13333333 0 0 -.13333333 0 286.66667)">
@@ -90,20 +89,6 @@
   </svg>
 </template>
 
-<script lang="ts" setup>
-const props = defineProps({
-  size: {
-    type: Object,
-    required: false,
-    default: () => {
-      return { width: 250, height: 151 };
-    },
-    validator(value: object) {
-      const values = Object.values(value);
-      return values.every((value) => value > 0);
-    },
-  },
-});
-</script>
+<script lang="ts" setup></script>
 
 <style></style>

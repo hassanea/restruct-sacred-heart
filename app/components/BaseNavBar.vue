@@ -19,12 +19,13 @@
         <font-awesome :icon="setMobileIcon" size="lg" />
       </template>
     </base-button>
-    <ul
+    <base-list
+      type="ul"
+      variant="nav-list"
       :id="navId"
-      class="flex flex-col md:flex-row justify-center items-center flex-wrap md:static md:translate-0 mx-0 md:mx-4 lg:mx-5 xl:mx-6 list-none transition-transform navbar-transition"
       :class="navbarNavClasses"
     >
-      <li class="list-none align-middle">
+      <base-list-item variant="nav-item-logo">
         <nuxt-link
           to="/"
           class="inline-block mx-auto px-1 md:px-2 py-0.5 md:py-1.25 align-middle text-xl whitespace-nowrap no-underline md:mr-4"
@@ -38,9 +39,9 @@
             class="my-0 mx-auto lg:mx-0 block w-[8.13rem] h-auto"
           />
         </nuxt-link>
-      </li>
-      <li
-        class="list-none align-middle my-4 md:my-0"
+      </base-list-item>
+      <base-list-item
+        variant="nav-item"
         v-for="navItem in navItems"
         :key="navItem.name.toLowerCase()"
       >
@@ -48,17 +49,17 @@
           v-if="navItem.to === '/'"
           :to="navItem.to"
           @click.prevent="handleScrollToTop"
-          class="mx-2 md:mx-3 hover:text-dark/70 hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78] transition-colors"
+          class="mx-2 md:mx-3 hover:text-dark/70 hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-secondary transition-colors nav-link focus:outline-0 focus:border-t-2 focus:border-b-0 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-secondary"
           >{{ navItem.name }}</nuxt-link
         >
         <nuxt-link
           v-else
           :to="navItem.to"
-          class="mx-2 md:mx-3 hover:text-dark/70 transition-colors hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-[#115B78]"
+          class="mx-2 md:mx-3 hover:text-dark/70 transition-colors hover:border-t-0 hover:border-l-0 hover:border-r-0 hover:border-b-2 hover:border-solid hover:border-secondary nav-link focus:outline-0 focus:border-t-2 focus:border-b-0 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-secondary"
           >{{ navItem.name }}</nuxt-link
         >
-      </li>
-    </ul>
+      </base-list-item>
+    </base-list>
   </nav>
 </template>
 
@@ -132,4 +133,22 @@ const setExpanded = computed(() => {
 .navbar-transition {
   transition-timing-function: cubic-bezier(1, 2.01, 0.18, -0.91);
 }
+
+.nav-link:active {
+  box-shadow: 5px 5px 5px 5px #f7f7f7;
+}
+
+/* .router-link-active {
+  background-color: #1e2939;
+  color: oklch(87.9% 0.169 91.605);
+  padding: 0.625rem;
+  border-radius: 5px;
+} */
+
+/* .router-link-exact-active {
+  background-color: #1e2939;
+  color: oklch(87.9% 0.169 91.605);
+  padding: 0.625rem;
+  border-radius: 5px;
+} */
 </style>

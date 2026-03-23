@@ -8,10 +8,7 @@
   "mainHead": ["AOD Restructuring at", "Sacred Heart—Auburn Hills"],
   "subHead": "Who is involved in our Parish?",
   "navItems": [
-    {
-      "to": "/",
-      "name": "Home"
-    },
+    { "to": "/", "name": "Home" },
     { "to": "#contacts", "name": "Contacts" },
     { "to": "#sessions", "name": "Sessions" },
     { "to": "#prep", "name": "Prep" }
@@ -33,7 +30,7 @@
   "sessions": {
     "title": "Parish Listening Sessions",
     "bullets": [
-      "Two parish listening sessions will be held in every parish in the Archdiocese.",
+      "Two parish listening sessions will be held in every parish in the Archdiocese of Detroit.",
       "At these sessions will be a review of potential pastoral models along with feedback.",
       "Every parish in the AOD will experience change in some way because of the process.",
       "Feedback will identify which proposed changes would better serve the people of God.",

@@ -45,9 +45,10 @@ const { type, variant, label } = props;
 
 const buttonClasses = computed(() => {
   return {
-    "inline-block bg-[#2C3E4C] text-white not-italic leading-normal tracking-wide hover:bg-white hover:text-[#2C3E4C] hover:border-2 hover:border-solid hover:border-[#2C3E4C] focus:outline-0 focus:border-4 focus:border-solid focus:border-[#FFD700] rounded-lg p-4 font-semibold cursor-pointer text-lg md:text-xl transition-shadow":
+    "inline-block bg-tertiary text-light not-italic leading-normal tracking-wide hover:bg-light hover:text-tertiary hover:border-2 hover:border-solid hover:border-tertiary focus:outline-0 focus:border-4 focus:border-solid focus:border-gold rounded-lg p-4 font-semibold cursor-pointer text-lg md:text-xl transition-shadow":
       variant === "btn-primary",
-    "btn-mobile-nav": variant === "btn-mobile-nav",
+    "inline-block absolute top-[13%] right-[1%] z-[1026] align-middle w-12 h-12 my-4 mx-0 p-2 bg-quartinary text-light border-2 border-solid border-heart-red rounded-[10px] cursor-pointer hover:bg-light hover:text-quartinary btn-mobile-nav":
+      variant === "btn-mobile-nav",
   };
 });
 
@@ -66,28 +67,7 @@ const buttonClasses = computed(() => {
 
 <style lang="css" scoped>
 .btn-mobile-nav {
-  display: inline-block;
-  position: absolute;
-  top: 13%;
-  right: 1%;
-  z-index: 1026;
-  vertical-align: middle;
-  width: 3rem;
-  height: 3rem;
-  margin: 1rem 0;
-  padding: 0.5rem;
-  background: #3e3a44;
-  color: #fff;
-  border: 2px solid #c2262b;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-}
-
-.btn-mobile-nav:hover {
-  background: #fff;
-  color: #3e3a44;
 }
 
 .btn-mobile-nav:active {
@@ -96,13 +76,8 @@ const buttonClasses = computed(() => {
 
 .btn-mobile-nav:focus {
   outline: 0;
-  /* background: #b; */
-  /* color: $primary-color;  */
+  border: 3px solid #f7f7f7;
 }
-
-/* &.active {
-    left: 1%;
-  } */
 </style>
 
 <style lang="css">

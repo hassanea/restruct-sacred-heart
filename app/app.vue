@@ -3,6 +3,7 @@
     <base-skip-link v-focus to="#content" label="Skip to main content" />
     <NuxtLoadingIndicator />
     <NuxtRouteAnnouncer />
+    <NuxtAnnouncer />
     <Nuxt-Layout>
       <Nuxt-Page />
     </Nuxt-Layout>

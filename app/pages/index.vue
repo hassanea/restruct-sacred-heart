@@ -1,48 +1,26 @@
 <template>
-  <header class="w-full h-auto">
-    <base-nav-bar
-      @handle-toggle="handleNavBarToggle"
-      @handle-close="handleNavBarClose"
-      :toggle
-      label="Main navigation"
-      logo="/heart-n-hands.svg"
-      :navItems
-    >
-    </base-nav-bar>
-    <div
-      class="w-screen h-[60vh] flex flex-col justify-center items-center bg-[#115B78] text-[#F7F7F7] text-center"
-    >
-      <base-logo class="inline-block align-middle mb-6"></base-logo>
-      <h1
-        class="text-[1.4rem] md:text-4xl lg:text-[2.5rem] xl:text-5xl font-cursive mt-10 mb-0 ml-0 mr-0 leading-relaxed not-italic font-black tracking-wide line-clamp-2"
-      >
-        <template v-for="item in mainHead" :key="item.toLowerCase()">
-          <span class="block">{{ item }}</span>
-        </template>
-      </h1>
-    </div>
-  </header>
+  <base-header :heading="mainHead" :links="navItems"> </base-header>
   <base-main>
     <base-section
-      class="p-13 border-b-2 border-solid border-dark"
+      class="p-6 md:p-7 lg:p-8 xl:p-11 border-b-2 border-solid border-dark"
       id="contacts"
     >
       <div class="grid grid-cols-1">
         <h2
-          class="text-xl md:text-2xl leading-normal font-cursive font-bold text-center md:text-left not-italic text-pretty"
+          class="text-xl md:text-2xl leading-normal font-cursive font-bold text-center md:text-left not-italic text-pretty mt-6 mb-3 md:my-5 lg:my-6"
         >
           {{ subHead }}
         </h2>
         <div
-          class="grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center"
+          class="grid grid-cols-1 lg:grid-cols-2 place-content-center place-items-center"
         >
-          <div class="p-8">
+          <div class="p-5 md:p-7 lg:p-8">
             <h2
-              class="text-2xl md:text-[1.625rem] lg:text-[1.75rem] xl:text-3xl leading-normal font-cursive mb-4 font-medium text-left"
+              class="text-2xl md:text-[1.625rem] lg:text-[1.75rem] xl:text-3xl leading-normal font-cursive mb-4 md:mb-5 lg:mb-6 font-medium text-center md:text-left"
             >
               {{ pcc.title }}
             </h2>
-            <ul>
+            <base-list type="ul" variant="list">
               <base-list-item
                 v-for="person in sortedPCCPeople"
                 :key="person.toLowerCase()"
@@ -50,16 +28,16 @@
               >
                 {{ person }}
               </base-list-item>
-            </ul>
+            </base-list>
           </div>
 
-          <div class="p-8">
+          <div class="p-5 md:p-7 lg:p-8">
             <h2
-              class="text-2xl md:text-[1.625rem] lg:text-[1.75rem] xl:text-3xl leading-normal font-cursive mb-4 font-medium text-left text-pretty"
+              class="text-2xl md:text-[1.625rem] lg:text-[1.75rem] xl:text-3xl leading-normal font-cursive mb-4 md:mb-5 lg:mb-6 font-medium text-center md:text-left text-pretty"
             >
               {{ kpc.title }}
             </h2>
-            <ul>
+            <base-list type="ul" variant="list">
               <base-list-item
                 v-for="person in sortedKPCPeople"
                 :key="person.toLowerCase()"
@@ -67,41 +45,43 @@
               >
                 {{ person }}
               </base-list-item>
-            </ul>
+            </base-list>
           </div>
         </div>
       </div>
     </base-section>
 
-    <base-section class="p-12 bg-gray-400" id="sessions">
+    <base-section
+      class="pt-7 pb-8 px-7 md:p-9 lg:p-11 xl:p-12 bg-gray-400"
+      id="sessions"
+    >
       <div class="grid grid-cols-1">
-        <h2 class="font-cursive text-4xl text-center mt-5 mb-12">
+        <h2
+          class="font-cursive not-italic leading-normal text-center font-bold text-2xl md:text-3xl lg:text-4xl mt-4 md:mt-5 mb-6 md:my-6 lg:mb-12 tracking-normal md:tracking-wide"
+        >
           {{ sessions.title }}
         </h2>
         <base-list type="ul" variant="session-list">
           <template
             v-for="bullet in sessions.bullets"
-            :key="`bullet-${useId()}`"
+            :key="`bullet-${bulletId}`"
           >
-            <li
+            <base-list-item
               v-if="typeof bullet === 'string'"
-              class="list-disc font-medium font-sans text-base lg:text-lg text-left leading-normal not-italic text-pretty"
+              variant="session-regular"
             >
               {{ bullet }}
-            </li>
-            <li
-              v-else
-              class="list-disc font-bold font-sans text-base lg:text-lg text-left leading-normal not-italic"
-            >
+            </base-list-item>
+            <base-list-item v-else variant="session-emphasized">
               {{ bullet.text }}
 
               <template v-if="bullet.dates?.length">
                 <span class="mr-2">
-                  <font-awesome icon="fa-solid fa-calendar" />
+                  <lazy-font-awesome icon="fa-solid fa-calendar" />
                 </span>
                 <p
                   v-for="date in bullet.dates"
-                  class="italic font-black text-base lg:text-lg text-center md:text-left my-0.5"
+                  class="italic font-black text-[0.875rem] md:text-base lg:text-lg text-center md:text-left my-0.5"
                 >
                   <time :datetime="date">
                     {{ useLocaleDate(new Date(`${date}`)) }}</time
@@ -115,18 +95,18 @@
                 :to="bullet.url"
                 v-tooltip.bottom="bullet.tooltip"
                 target="_blank"
-                class="p-4 rounded-6xl hover:bg-[#2C3E4C] hover:text-white hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+                class="p-4 rounded-6xl hover:bg-tertiary hover:text-light hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
                 ><span class="mr-1">
-                  <font-awesome :icon="bullet.icon" size="1x" /> </span
+                  <lazy-font-awesome :icon="bullet.icon" size="1x" /> </span
                 >{{ bullet.urlText }}</nuxt-link
               >
-            </li>
+            </base-list-item>
           </template>
         </base-list>
       </div>
     </base-section>
     <base-section
-      class="bg-[#DADADA] py-12 px-5 md:py-15 md:px-0 lg:py-18 xl:p-22.5"
+      class="bg-prep py-12 px-5 md:py-15 md:px-0 lg:py-18 xl:p-22.5"
       id="prep"
     >
       <div class="grid grid-cols-1">
@@ -171,7 +151,7 @@
                     :to="item.url"
                     v-tooltip="'Prayer for AOD Restructuring'"
                     target="_blank"
-                    class="hover:bg-[#2C3E4C] hover:text-white hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+                    class="hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
                     >{{ item.urlTitle }}</nuxt-link
                   >
                   <span class="hidden md:inline">
@@ -204,7 +184,7 @@
                       :to="item.url"
                       v-tooltip.bottom="'Parish Workbook'"
                       target="_blank"
-                      class="hover:bg-[#2C3E4C] hover:text-white hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-[#FFD700] box-shadow transition-shadow"
+                      class="hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
                       >{{ item.urlTitle }}</nuxt-link
                     >
                   </p>
@@ -258,26 +238,19 @@ useHead({
     { property: "og:type", content: meta.type },
     { property: "og:url", content: meta.url },
   ],
-  bodyAttrs: { class: "pt-[5.625rem]" },
+  bodyAttrs: { class: "pt-[5.625rem] lg:pt-[6.25rem] 2xl:pt-[5.625rem]" },
 });
 
 const currentYear = ref(0);
-const toggle = ref(false);
 const showPray = ref(true);
 const showReview = ref(true);
 const showReflect = ref(true);
 
+const bulletId = useId();
+
 onMounted(() => {
   currentYear.value = new Date().getFullYear();
 });
-
-const handleNavBarToggle = () => {
-  toggle.value = !toggle.value;
-};
-
-const handleNavBarClose = () => {
-  toggle.value = false;
-};
 
 const sortedPCCPeople = computed(() => {
   return sortedByLastName(pcc.people);

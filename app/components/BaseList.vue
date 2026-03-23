@@ -22,10 +22,9 @@ const props = defineProps({
   },
   variant: {
     type: String,
-    required: false,
-    default: "",
+    required: true,
     validator(value: string) {
-      return ["session-list", "prep-list"].includes(value);
+      return ["list", "nav-list", "session-list", "prep-list"].includes(value);
     },
   },
   items: {
@@ -47,9 +46,13 @@ const props = defineProps({
 
 const listClasses = computed(() => {
   return {
+    "m-0 p-0": props.variant === "list",
     "w-full h-auto grid grid-cols-1 xl:grid-cols-3 container gap-8 md:gap-11 lg:gap-13 mx-auto place-content-center place-items-center":
       props.variant === "prep-list",
-    "grid grid-cols-1 lg:grid-cols-2 gap-5": props.variant === "session-list",
+    "grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4 lg:gap-5":
+      props.variant === "session-list",
+    "flex flex-col md:flex-row justify-center items-center flex-wrap md:static md:translate-0 mx-0 md:mx-4 lg:mx-5 xl:mx-6 list-none transition-transform navbar-transition":
+      props.variant === "nav-list",
   };
 });
 </script>
