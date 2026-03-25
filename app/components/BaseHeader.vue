@@ -14,7 +14,7 @@
     >
       <base-logo class="inline-block align-middle mb-6"></base-logo>
       <h1
-        class="text-[1.4rem] md:text-4xl lg:text-[2.5rem] xl:text-5xl font-cursive mt-6 md:mt-7 lg:mt-8 xl:mt-10 mb-0 ml-0 mr-0 leading-normal md:leading-relaxed not-italic font-black tracking-normal md:tracking-wide line-clamp-2"
+        class="text-[1.4rem] md:text-4xl lg:text-4-5xl xl:text-5xl font-cursive mt-6 md:mt-7 lg:mt-8 xl:mt-10 mb-0 ml-0 mr-0 leading-normal md:leading-relaxed not-italic font-black tracking-normal md:tracking-wide line-clamp-2"
       >
         <template v-if="typeof heading === 'object'">
           <span

@@ -16,7 +16,7 @@
         >
           <div class="p-5 md:p-7 lg:p-8">
             <h2
-              class="text-2xl md:text-[1.625rem] lg:text-[1.75rem] xl:text-3xl leading-normal font-cursive mb-4 md:mb-5 lg:mb-6 font-medium text-center md:text-left"
+              class="text-2xl md:text-[1.625rem] lg:text-2-5xl xl:text-3xl leading-normal font-cursive mb-4 md:mb-5 lg:mb-6 font-medium text-center md:text-left"
             >
               {{ pcc.title }}
             </h2>
@@ -33,7 +33,7 @@
 
           <div class="p-5 md:p-7 lg:p-8">
             <h2
-              class="text-2xl md:text-[1.625rem] lg:text-[1.75rem] xl:text-3xl leading-normal font-cursive mb-4 md:mb-5 lg:mb-6 font-medium text-center md:text-left text-pretty"
+              class="text-2xl md:text-[1.625rem] lg:text-2-5xl xl:text-3xl leading-normal font-cursive mb-4 md:mb-5 lg:mb-6 font-medium text-center md:text-left text-pretty"
             >
               {{ kpc.title }}
             </h2>
