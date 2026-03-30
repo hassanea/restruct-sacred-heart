@@ -40,7 +40,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {},
   },
-
   site: {
     url: "https://revamp.esacredheart.org",
     name: "Sacred Heart Catholic Church - Auburn Hills, MI | Archdiocesan Restructuring",

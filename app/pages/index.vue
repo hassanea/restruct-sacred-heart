@@ -226,6 +226,7 @@ import { sortedByLastName } from "@/utils/index";
 const { meta, mainHead, subHead, navItems, pcc, kpc, sessions, prep } = data;
 
 useHead({
+  title: `${meta.title} ${meta.location}${meta.subTitle}`,
   meta: [
     {
       name: "description",
