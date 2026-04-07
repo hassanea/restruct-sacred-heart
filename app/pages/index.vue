@@ -95,7 +95,7 @@
                 :to="bullet.url"
                 v-tooltip.bottom="bullet.tooltip"
                 target="_blank"
-                class="p-4 rounded-6xl hover:bg-tertiary hover:text-light hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
+                class="p-4 rounded-2xl border-[3px] border-solid border-tertiary hover:bg-tertiary hover:text-light hover:rounded-sm hover:border-0 focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
                 ><span class="mr-1">
                   <lazy-font-awesome :icon="bullet.icon" size="1x" /> </span
                 >{{ bullet.urlText }}</nuxt-link
