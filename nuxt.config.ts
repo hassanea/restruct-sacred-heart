@@ -4,7 +4,20 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-
+  hooks: {
+    "build:manifest": (manifest) => {
+      for (const key of Object.keys(manifest)) {
+        const entry = manifest[key];
+        if (entry.resourceType === "style" || key.endsWith(".css")) {
+          entry.dynamicImports = [];
+        }
+        // Clear css references from ALL entries (including JS chunks)
+        // to prevent Nuxt from injecting render-blocking <link> tags.
+        // Styles are already inlined via SSR.
+        entry.css = [];
+      }
+    },
+  },
   modules: [
     "@nuxthub/core",
     "@vesp/nuxt-fontawesome",
