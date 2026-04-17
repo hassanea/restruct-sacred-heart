@@ -175,11 +175,6 @@ export default defineNuxtConfig({
           rel: "dns-prefetch",
           href: "https://fonts.gstatic.com",
         },
-        {
-          rel: "preload",
-          href: "./app/assets/css/main.css",
-          as: "style",
-        },
       ],
     },
   },
