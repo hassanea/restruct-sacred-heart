@@ -133,7 +133,7 @@ export default defineNuxtConfig({
         { href: "https://www.googletagmanager.com", rel: "dns-prefetch" },
         { href: "https://cdn.esacredheart.org", rel: "preconnect" },
         { href: "https://images.esacredheart.org", rel: "preconnect" },
-        { href: "https://restructuring.esacredheart.org", rel: "canonical" },
+        { href: "https://revamp.esacredheart.org", rel: "canonical" },
         {
           href: "https://cdn.esacredheart.org/sacred-heart.ico",
           rel: "shortcut icon",
@@ -174,6 +174,11 @@ export default defineNuxtConfig({
         {
           rel: "dns-prefetch",
           href: "https://fonts.gstatic.com",
+        },
+        {
+          rel: "preload",
+          href: "./app/assets/css/main.css",
+          as: "style",
         },
       ],
     },
