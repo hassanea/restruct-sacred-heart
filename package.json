@@ -21,7 +21,7 @@
     "@nuxt/scripts": "1.0.6",
     "@nuxthub/core": "0.10.7",
     "@nuxtjs/seo": "^5.1.3",
-    "@sentry/nuxt": "^10.51.0",
+    "@sentry/nuxt": "^10.52.0",
     "@tailwindcss/vite": "^4.2.4",
     "@vesp/nuxt-fontawesome": "2.0.0",
     "@vueuse/nuxt": "14.3.0",
@@ -38,7 +38,7 @@
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@fortawesome/pro-regular-svg-icons": "^7.2.0",
     "@fortawesome/pro-solid-svg-icons": "^7.2.0",
-    "wrangler": "^4.88.0"
+    "wrangler": "^4.90.0"
   },
   "pnpm": {
     "overrides": {
