@@ -29,6 +29,7 @@ export default defineNuxtConfig({
         "@fortawesome/free-solid-svg-icons",
         "@fortawesome/pro-regular-svg-icons",
         "@fortawesome/pro-solid-svg-icons",
+        "@unhead/schema-org/vue",
       ],
     },
   },
@@ -48,9 +49,18 @@ export default defineNuxtConfig({
     proIcons: {
       solid: ["DoNotEnter"],
       regular: ["FaceThinking"],
+      light: ["HeadSideSpeak"],
     },
     icons: {
-      solid: ["Bars", "Bomb", "BookOpen", "Calendar", "Church", "Xmark"],
+      solid: [
+        "Bars",
+        "Bomb",
+        "BookOpenReader",
+        "Check",
+        "Map",
+        "Video",
+        "Xmark",
+      ],
     },
   },
 

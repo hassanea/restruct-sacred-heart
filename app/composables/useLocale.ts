@@ -107,10 +107,14 @@ export const useGetDate = (
 
 // ** REFERENCE: https://dev.to/diorla/a-guide-to-date-and-time-formatting-in-javascript-2ol2
 
-export const useLocaleDate = (date: Ref<Date> | Date, locale = useLocale()) => {
+export const useLocaleDate = (
+  date: Ref<Date> | Date,
+  locale = useLocale(),
+  format = "full",
+) => {
   // @ts-ignore
   return computed(() =>
-    new Intl.DateTimeFormat(locale.value, { dateStyle: "full" }).format(
+    new Intl.DateTimeFormat(locale.value, { dateStyle: format }).format(
       unref(date),
     ),
   );

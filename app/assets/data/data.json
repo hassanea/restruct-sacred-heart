@@ -31,60 +31,130 @@
     ]
   },
   "sessions": {
-    "title": "Parish Listening Sessions",
-    "bullets": [
-      "Two parish listening sessions will be held in every parish in the Archdiocese of Detroit.",
-      "At these sessions will be a review of potential pastoral models along with feedback.",
-      "Every parish in the AOD will experience change in some way because of the process.",
-      "Feedback will identify which proposed changes would better serve the people of God.",
+    "title": "Complete the Post-Listening Sessions Feedback Survey",
+    "subTitle": "Pastorate Model Options for Planning Area 10:",
+    "models": [
       {
-        "text": "Our parish listening sessions will be:",
-        "dates": ["2026-05-19T19:00:00", "2026-05-21T19:00:00"],
-        "endTime": "2026-05-19T21:00:00"
+        "name": "Draft Model Option A",
+        "shortName": "Model A",
+        "shortNameEs": "modelo A",
+        "resources": [
+          {
+            "type": "Video",
+            "language": "English",
+            "url": "https://aod.filecamp.com/s/i/WGlz0bpefkutR9JD"
+          },
+          {
+            "type": "Vídeo",
+            "language": "Español",
+            "url": "https://aod.filecamp.com/s/i/jBqDz22IkU2xs7GK"
+          },
+          {
+            "type": "Map",
+            "file": "PDF",
+            "url": "https://aod.filecamp.com/s/i/pcig0qoxgarx0IFM"
+          }
+        ]
       },
       {
-        "text": "For more information go to",
-        "tooltip": "AOD Restructuring Info",
-        "icon": "fa-solid fa-book-open",
-        "url": "http://restructuring.aod.org",
-        "urlText": "restructuring.aod.org"
+        "name": "Draft Model Option B",
+        "shortName": "Model B",
+        "shortNameEs": "modelo B",
+        "resources": [
+          {
+            "type": "Video",
+            "language": "English",
+            "url": "https://aod.filecamp.com/s/i/2zXbwDxrCeC7hDHr"
+          },
+          {
+            "type": "Vídeo",
+            "language": "Español",
+            "url": "https://aod.filecamp.com/s/i/we1hT7GZeQKTamk5"
+          },
+          {
+            "type": "Map",
+            "file": "PDF",
+            "url": "https://aod.filecamp.com/s/i/wPc8AvysaZJHAy1L"
+          }
+        ]
       },
       {
-        "text": "Sign up for a Session:",
-        "tooltip": "Register for a Session",
-        "icon": "fa-solid fa-church",
-        "url": "https://www.cognitoforms.com/ArchdioceseOfDetroit2/ParishListeningSessionRegistration?qr",
-        "urlText": "Register"
+        "name": "Draft Model Option C",
+        "shortName": "Model C",
+        "shortNameEs": "modelo C",
+        "resources": [
+          {
+            "type": "Video",
+            "language": "English",
+            "url": "https://aod.filecamp.com/s/i/KVvppogHXoNGVcVl"
+          },
+          {
+            "type": "Vídeo",
+            "language": "Español",
+            "url": "https://aod.filecamp.com/s/i/3YMzitc47GyGtVMm"
+          },
+          {
+            "type": "Map",
+            "file": "PDF",
+            "url": "https://aod.filecamp.com/s/i/1uqxZRgAU3XFlNvr"
+          }
+        ]
       },
-      "Register to help us plan for the sessions and receive a copy of the presentation and follow-up survey once all listening sessions in our area are completed. We are part of Planning Area 10."
-    ]
+      {
+        "name": "Draft Model Option D",
+        "shortName": "Model D",
+        "shortNameEs": "modelo D",
+        "resources": [
+          {
+            "type": "Video",
+            "language": "English",
+            "url": "https://aod.filecamp.com/s/i/acdffoNFJaGNOhXu"
+          },
+          {
+            "type": "Vídeo",
+            "language": "Español",
+            "url": "https://aod.filecamp.com/s/i/WCrc8wkw0ePCH410"
+          },
+          {
+            "type": "Map",
+            "file": "PDF",
+            "url": "https://aod.filecamp.com/s/i/QjQMsFpn7gAgOFBM"
+          }
+        ]
+      }
+    ],
+    "overview": {
+      "title": "Model Overview: Planning Area 10:",
+      "text": "Read a summary of model options in Planning Area 10",
+      "url": "https://aod.filecamp.com/s/i/nMHEAOGKW65PM8T0"
+    }
   },
   "prep": {
-    "title": "Preparing for Our Parish Listening Sessions:",
+    "title": "Preparing for Completing Feedback:",
     "bullets": [
       {
         "name": "Pray",
         "image": "/hands-praying.svg",
-        "url": "https://restructuring.aod.org/#prayer",
-        "urlTitle": " the Prayer for Restructuring the AOD ",
-        "text": "as we go through this process. Intercede for those preparing for the listening sessions, those who will attend and provide feedback.",
-        "mobileText": " as we go through this process."
+        "text": " before, during, and after filling out the online survey. Invite the Holy Spirit to work through you as you answer the questions, remove any barrier or bias, and help you share what works or doesn’t work in the proposed models. Please continue to pray for our parishes, clergy, and all those involved in this process.",
+        "mobileText": " as we go through this process"
       },
       {
         "name": "Review",
         "image": "fa-regular fa-face-thinking",
-        "url": "https://restructuring.aod.org/parish-workbooks",
-        "urlTitle": "here.",
-        "text": " Sacred Heart’s Parish Workbook and the workbooks of any other parish in Planning Area 10 that you want to know more about. These documents were compiled to provide transparency and inform the restructuring process. Understanding this information helps each of us enter this time of discernment with a deeper sense of awareness around the need for restructuring. Workbooks for all parishes in the AOD can be found ",
-        "mobileText": " our Parish Workbook or any Planning Area 10 Parish Workbooks "
+        "url": "https://restructuring.aod.org/planning-area-10",
+        "urlTitle": "PA 10 Videos",
+        "text": " Your Planning Area Models - Take time to review the proposed models for your planning area. Be sure to watch all of the planning area videos before completing the survey, especially if you were unable to attend a listening session. These videos provide important context and details about each of the proposed models. You can find your planning area videos here: ",
+        "mobileText": " Purposed Planning Area Models: "
       },
       {
-        "name": "Reflect",
-        "image": "/personal-reflection.svg",
-        "url": "",
-        "urlTitle": "",
-        "text": " and take time to name your feelings about restructuring. Are you feeling anxious? Fearful? Angry? Excited? Hopeful? Ask the Lord to open your heart to be receptive to where he is leading our parish and the entire Archdiocese of Detroit. Be prepared to share your thoughts about how the proposed models will impact the AOD vision of Vibrant Parishes, Flourishing Priests and being Mission Ready.",
-        "mobileText": " and take time to name your feelings about restructuring."
+        "name": "Give",
+        "image": "fa-light fa-head-side-speak",
+        "url": "https://form.jotform.com/261034294481152",
+        "urlTitle": "Spring 2026 Post Listening Session Survey",
+        "text": " Your Feedback - The post-listening session survey provides every member of the Faithful an opportunity to share feedback on the proposed models in their own words. Your feedback will provide valuable insight that informs the next phase of the restructuring process. The ",
+        "lastLine": " will remain open until",
+        "date": "2026-07-31T00:00:00",
+        "mobileText": " Your Feedback via "
       }
     ]
   }

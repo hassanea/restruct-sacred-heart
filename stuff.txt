@@ -1,3 +1,253 @@
+    
+    
+    
+    {
+  "meta": {
+    "title": "Sacred Heart Catholic Church",
+    "location": "- Auburn Hills, MI | ",
+    "subTitle": "Archdiocesan Restructuring",
+    "description": "Archdiocese of Detroit's Restructuring Information for Sacred Heart Catholic Church, Auburn Hills, MI",
+    "keywords": "Sacred Heart Catholic Church, Auburn Hills, Michigan, Archdiocese of Detroit, Restructuring, Archdiocesan Restructuring",
+    "type": "website",
+    "url": "https://revamp.esacredheart.org/"
+  },
+  "mainHead": ["AOD Restructuring at", "Sacred Heart—Auburn Hills"],
+  "subHead": "Who is involved in our Parish?",
+  "navItems": [
+    { "to": "/", "name": "Home" },
+    { "to": "#contacts", "name": "Contacts" },
+    { "to": "#sessions", "name": "Sessions" },
+    { "to": "#prep", "name": "Prep" }
+  ],
+  "pcc": {
+    "title": "Primary Points of Contact (PCC):",
+    "people": ["Dcn. Michael Stach", "Mary Ann Hannigan"]
+  },
+  "kpc": {
+    "title": "Key Parish Leaders (KPC):",
+    "people": [
+      "Peter Keating",
+      "Tom DelPup",
+      "JoAnn Eaton",
+      "Jackie Pettitt",
+      "Jayson Graves"
+    ]
+  },
+  "sessions": {
+    "title": "Parish Listening Sessions",
+    "bullets": [
+      "Two parish listening sessions will be held in every parish in the Archdiocese of Detroit.",
+      "At these sessions will be a review of potential pastoral models along with feedback.",
+      "Every parish in the AOD will experience change in some way because of the process.",
+      "Feedback will identify which proposed changes would better serve the people of God.",
+      {
+        "text": "Our parish listening sessions will be:",
+        "dates": ["2026-05-19T19:00:00", "2026-05-21T19:00:00"],
+        "endTime": "2026-05-19T21:00:00"
+      },
+      {
+        "text": "For more information go to",
+        "tooltip": "AOD Restructuring Info",
+        "icon": "fa-solid fa-book-open",
+        "url": "http://restructuring.aod.org",
+        "urlText": "restructuring.aod.org"
+      },
+      {
+        "text": "Sign up for a Session:",
+        "tooltip": "Register for a Session",
+        "icon": "fa-solid fa-church",
+        "url": "https://www.cognitoforms.com/ArchdioceseOfDetroit2/ParishListeningSessionRegistration?qr",
+        "urlText": "Register"
+      },
+      "Register to help us plan for the sessions and receive a copy of the presentation and follow-up survey once all listening sessions in our area are completed. We are part of Planning Area 10."
+    ]
+  },
+  "prep": {
+    "title": "Preparing for Our Parish Listening Sessions:",
+    "bullets": [
+      {
+        "name": "Pray",
+        "image": "/hands-praying.svg",
+        "url": "https://restructuring.aod.org/#prayer",
+        "urlTitle": " the Prayer for Restructuring the AOD ",
+        "text": "as we go through this process. Intercede for those preparing for the listening sessions, those who will attend and provide feedback.",
+        "mobileText": " as we go through this process."
+      },
+      {
+        "name": "Review",
+        "image": "fa-regular fa-face-thinking",
+        "url": "https://restructuring.aod.org/parish-workbooks",
+        "urlTitle": "here.",
+        "text": " Sacred Heart’s Parish Workbook and the workbooks of any other parish in Planning Area 10 that you want to know more about. These documents were compiled to provide transparency and inform the restructuring process. Understanding this information helps each of us enter this time of discernment with a deeper sense of awareness around the need for restructuring. Workbooks for all parishes in the AOD can be found ",
+        "mobileText": " our Parish Workbook or any Planning Area 10 Parish Workbooks "
+      },
+      {
+        "name": "Reflect",
+        "image": "/personal-reflection.svg",
+        "url": "",
+        "urlTitle": "",
+        "text": " and take time to name your feelings about restructuring. Are you feeling anxious? Fearful? Angry? Excited? Hopeful? Ask the Lord to open your heart to be receptive to where he is leading our parish and the entire Archdiocese of Detroit. Be prepared to share your thoughts about how the proposed models will impact the AOD vision of Vibrant Parishes, Flourishing Priests and being Mission Ready.",
+        "mobileText": " and take time to name your feelings about restructuring."
+      }
+    ]
+  }
+}
+
+    "bullets": [
+      "Two parish listening sessions will be held in every parish in the Archdiocese of Detroit.",
+      "At these sessions will be a review of potential pastoral models along with feedback.",
+      "Every parish in the AOD will experience change in some way because of the process.",
+      "Feedback will identify which proposed changes would better serve the people of God.",
+      {
+        "text": "Our parish listening sessions will be:",
+        "dates": ["2026-05-19T19:00:00", "2026-05-21T19:00:00"],
+        "endTime": "2026-05-19T21:00:00"
+      },
+      {
+        "text": "For more information go to",
+        "tooltip": "AOD Restructuring Info",
+        "icon": "fa-solid fa-book-open",
+        "url": "http://restructuring.aod.org",
+        "urlText": "restructuring.aod.org"
+      },
+      {
+        "text": "Sign up for a Session:",
+        "tooltip": "Register for a Session",
+        "icon": "fa-solid fa-church",
+        "url": "https://www.cognitoforms.com/ArchdioceseOfDetroit2/ParishListeningSessionRegistration?qr",
+        "urlText": "Register"
+      },
+      "Register to help us plan for the sessions and receive a copy of the presentation and follow-up survey once all listening sessions in our area are completed. We are part of Planning Area 10."
+    ]
+
+           <!-- <template
+            v-for="bullet in sessions.bullets"
+            :key="`bullet-${bulletId}`"
+          >
+            <base-list-item
+              v-if="typeof bullet === 'string'"
+              variant="session-regular"
+            >
+              {{ bullet }}
+            </base-list-item>
+            <base-list-item v-else variant="session-emphasized">
+              {{ bullet.text }}
+
+              <template v-if="bullet.dates?.length">
+                <span class="mr-2">
+                  <lazy-font-awesome icon="fa-solid fa-calendar" />
+                </span>
+                <p
+                  v-for="date in bullet.dates"
+                  class="italic font-black text-[0.875rem] md:text-base lg:text-lg text-center md:text-left my-0.5"
+                >
+                  <time :datetime="date">
+                    {{ useLocaleDate(new Date(`${date}`)) }}</time
+                  >
+                  from {{ useLocaleTimeShort(new Date(`${date}`)) }} to
+                  {{ useLocaleTimeShort(new Date(`${bullet.endTime}`)) }}
+                </p>
+              </template>
+              <nuxt-link
+                v-else
+                :to="bullet.url"
+                v-tooltip.bottom="bullet.tooltip"
+                target="_blank"
+                external
+                class="bg-tertiary-light text-light p-4 rounded-2xl border-[3px] border-solid border-tertiary hover:bg-tertiary/90 hover:text-light hover:rounded-sm hover:border-0 focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
+                ><span class="mr-1">
+                  <lazy-font-awesome :icon="bullet.icon" size="1x" /> </span
+                >{{ bullet.urlText }}</nuxt-link
+              >
+            </base-list-item>
+          </template> -->
+
+<!-- sessions section -->
+
+<base-section
+      class="pt-7 pb-8 px-7 md:p-9 lg:p-11 xl:p-12 bg-gray-400"
+      id="sessions"
+    >
+      <div class="grid grid-cols-1">
+        <h2
+          class="font-cursive not-italic leading-normal text-center font-bold text-2xl md:text-3xl lg:text-4xl mt-4 md:mt-5 mb-6 md:my-6 lg:mb-12 tracking-normal md:tracking-wide"
+        >
+          {{ sessions.title }}
+        </h2>
+        <h3
+          class="text-xl md:text-2xl leading-normal font-cursive font-bold text-center md:text-left not-italic text-pretty mt-6 mb-3 md:my-5 lg:my-6"
+        >
+          {{ sessions.subTitle }}
+        </h3>
+        <base-list type="ul" variant="session-list">
+          <template
+            v-for="bullet in sessions.bullets"
+            :key="`bullet-${bulletId}`"
+          >
+            <base-list-item
+              v-if="typeof bullet === 'string'"
+              variant="session-regular"
+            >
+              {{ bullet }}
+            </base-list-item>
+            <base-list-item v-else variant="session-emphasized">
+              {{ bullet.text }}
+
+              <template v-if="bullet.dates?.length">
+                <span class="mr-2">
+                  <lazy-font-awesome icon="fa-solid fa-calendar" />
+                </span>
+                <p
+                  v-for="date in bullet.dates"
+                  class="italic font-black text-[0.875rem] md:text-base lg:text-lg text-center md:text-left my-0.5"
+                >
+                  <time :datetime="date">
+                    {{ useLocaleDate(new Date(`${date}`)) }}</time
+                  >
+                  from {{ useLocaleTimeShort(new Date(`${date}`)) }} to
+                  {{ useLocaleTimeShort(new Date(`${bullet.endTime}`)) }}
+                </p>
+              </template>
+              <nuxt-link
+                v-else
+                :to="bullet.url"
+                v-tooltip.bottom="bullet.tooltip"
+                target="_blank"
+                external
+                class="bg-tertiary-light text-light p-4 rounded-2xl border-[3px] border-solid border-tertiary hover:bg-tertiary/90 hover:text-light hover:rounded-sm hover:border-0 focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
+                ><span class="mr-1">
+                  <lazy-font-awesome :icon="bullet.icon" size="1x" /> </span
+                >{{ bullet.urlText }}</nuxt-link
+              >
+            </base-list-item>
+          </template>
+        </base-list>
+      </div>
+    </base-section>
+
+
+                  <!-- Pray Link -->
+                  <nuxt-link
+                    :to="item.url"
+                    v-tooltip="'Prayer for AOD Restructuring'"
+                    target="_blank"
+                    external
+                    class="font-semibold italic hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
+                    >{{ item.urlTitle }}</nuxt-link
+                  >
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div
       class="w-full h-auto grid place-content-center place-items-center text-center"
     >
