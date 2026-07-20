@@ -47,9 +47,9 @@
     },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
+      "@sentry/cli",
       "esbuild",
       "sharp",
-      "vue-demi",
       "workerd"
     ]
   }

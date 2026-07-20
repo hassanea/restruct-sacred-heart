@@ -154,6 +154,24 @@
           <p
             class="text-lg md:text-xl leading-normal text-center md:text-left mt-2.5 md:mt-3.5 font-sans not-italic font-medium text-pretty"
           >
+            {{ sessions.feedback.title }}
+            <nuxt-link
+              :to="`https://www.esacredheart.org/docs/${sessions.feedback.file}`"
+              target="_blank"
+              class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
+              external
+              v-tooltip.bottom="'KPL\'s Response to Restructuring Survey'"
+            >
+              <span class="mr-1 md:mr-1.5">
+                <font-awesome icon="fa-light fa-file" />
+              </span>
+              {{ sessions.feedback.text }}
+            </nuxt-link>
+          </p>
+
+          <p
+            class="text-lg md:text-xl leading-normal text-center md:text-left mt-2.5 md:mt-3.5 font-sans not-italic font-medium text-pretty"
+          >
             <span class="mr-1 md:mr-1.5">
               <font-awesome icon="fa-solid fa-check" />
             </span>

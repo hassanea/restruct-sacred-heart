@@ -49,7 +49,7 @@ export default defineNuxtConfig({
     proIcons: {
       solid: ["DoNotEnter"],
       regular: ["FaceThinking"],
-      light: ["HeadSideSpeak"],
+      light: ["File", "HeadSideSpeak"],
     },
     icons: {
       solid: [
