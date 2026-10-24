@@ -172,6 +172,21 @@
           <p
             class="text-lg md:text-xl leading-normal text-center md:text-left mt-2.5 md:mt-3.5 font-sans not-italic font-medium text-pretty"
           >
+            {{ sessions.modelFeedback.title }}
+            <nuxt-link
+              :to="sessions.modelFeedback.url"
+              target="_blank"
+              class="inline-block bg-tertiary text-light not-italic leading-normal tracking-wide hover:bg-light hover:text-tertiary hover:border-2 hover:border-solid hover:border-tertiary focus:outline-0 focus:border-4 focus:border-solid focus:border-gold rounded-lg p-4 font-semibold cursor-pointer text-lg md:text-xl transition-shadow"
+              external
+              v-tooltip.right="'Provide your Feedback'"
+            >
+              {{ sessions.modelFeedback.text }}</nuxt-link
+            >
+          </p>
+
+          <p
+            class="text-lg md:text-xl leading-normal text-center md:text-left mt-2.5 md:mt-3.5 font-sans not-italic font-medium text-pretty"
+          >
             {{ sessions.overview.title }}
             <nuxt-link
               :to="sessions.overview.url"
