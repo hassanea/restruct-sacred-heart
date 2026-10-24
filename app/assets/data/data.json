@@ -6,6 +6,7 @@
     "description": "Archdiocese of Detroit's Restructuring Information for Sacred Heart Catholic Church, Auburn Hills, MI",
     "keywords": "Sacred Heart Catholic Church, Auburn Hills, Michigan, Archdiocese of Detroit, Restructuring, Archdiocesan Restructuring",
     "type": "website",
+    "dn": "http://www.esacredheart.org/docs/",
     "url": "https://revamp.esacredheart.org/"
   },
   "mainHead": ["AOD Restructuring at", "Sacred Heart—Auburn Hills"],
@@ -13,8 +14,8 @@
   "navItems": [
     { "to": "/", "name": "Home" },
     { "to": "#contacts", "name": "Contacts" },
-    { "to": "#sessions", "name": "Sessions" },
-    { "to": "#prep", "name": "Prep" }
+    { "to": "#models", "name": "Models" },
+    { "to": "#pray", "name": "Pray" }
   ],
   "pcc": {
     "title": "Primary Points of Contact (PCC):",
@@ -31,8 +32,8 @@
     ]
   },
   "sessions": {
-    "title": "Complete the Post-Listening Sessions Feedback Survey",
-    "subTitle": "Pastorate Model Options for Planning Area 10:",
+    "title": "Review Round 1 & 2 Models",
+    "subTitle": "Updated Draft Models for Planning Area 10:",
     "models": [
       {
         "name": "Draft Model Option A",
@@ -121,8 +122,42 @@
             "url": "https://aod.filecamp.com/s/i/QjQMsFpn7gAgOFBM"
           }
         ]
+      },
+      {
+        "name": "Draft Model Option E",
+        "shortName": "Model E",
+        "shortNameEs": "modelo E",
+        "resources": [
+          {
+            "type": "Map",
+            "file": "PDF",
+            "url": "https://aod.filecamp.com/s/i/rUS8yUg71cnc8YcD"
+          }
+        ]
+      },
+      {
+        "name": "Draft Model Option F",
+        "shortName": "Model F",
+        "shortNameEs": "modelo F",
+        "resources": [
+          {
+            "type": "Map",
+            "file": "PDF",
+            "url": "https://aod.filecamp.com/s/i/pVQ9sX2UQD1GKiap"
+          }
+        ]
       }
     ],
+    "refine": {
+      "title": "An update to the refinement phase of the Restructuring Process:",
+      "text": "See Archbishop Weisenberger's Refinement Phase video",
+      "url": "https://www.youtube.com/watch?v=tx5unhnr9a8"
+    },
+    "revision": {
+      "title": "Rationale for Model Revision:",
+      "text": "Check out revised models",
+      "url": "https://aod.filecamp.com/s/i/VS95sBwMMkXF0Ty5"
+    },
     "overview": {
       "title": "Model Overview: Planning Area 10:",
       "text": "Read a summary of model options in Planning Area 10",
@@ -134,33 +169,13 @@
       "file": "aod-restructuring-parish-feedback-responses-final.pdf"
     }
   },
-  "prep": {
-    "title": "Preparing for Completing Feedback:",
-    "bullets": [
-      {
-        "name": "Pray",
-        "image": "/hands-praying.svg",
-        "text": " before, during, and after filling out the online survey. Invite the Holy Spirit to work through you as you answer the questions, remove any barrier or bias, and help you share what works or doesn’t work in the proposed models. Please continue to pray for our parishes, clergy, and all those involved in this process.",
-        "mobileText": " as we go through this process"
-      },
-      {
-        "name": "Review",
-        "image": "fa-regular fa-face-thinking",
-        "url": "https://restructuring.aod.org/planning-area-10",
-        "urlTitle": "PA 10 Videos",
-        "text": " Your Planning Area Models - Take time to review the proposed models for your planning area. Be sure to watch all of the planning area videos before completing the survey, especially if you were unable to attend a listening session. These videos provide important context and details about each of the proposed models. You can find your planning area videos here: ",
-        "mobileText": " Purposed Planning Area Models: "
-      },
-      {
-        "name": "Give",
-        "image": "fa-light fa-head-side-speak",
-        "url": "https://form.jotform.com/261034294481152",
-        "urlTitle": "Spring 2026 Post Listening Session Survey",
-        "text": " Your Feedback - The post-listening session survey provides every member of the Faithful an opportunity to share feedback on the proposed models in their own words. Your feedback will provide valuable insight that informs the next phase of the restructuring process. The ",
-        "lastLine": " will remain open until",
-        "date": "2026-07-31T00:00:00",
-        "mobileText": " Your Feedback via "
-      }
-    ]
+  "pray": {
+    "title": "Pray",
+    "icon": "hands-praying.svg",
+    "prayer": {
+      "image": "prayer-for-archdiocesan-restructuring.jpg",
+      "alt": "Prayer for Archdiocesan Restructuring",
+      "file": "prayer-for-archdiocesan-restructuring.pdf"
+    }
   }
 }

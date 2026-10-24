@@ -47,11 +47,12 @@ export default defineNuxtConfig({
 
   fontawesome: {
     proIcons: {
-      solid: ["DoNotEnter"],
+      solid: ["DoNotEnter", "Eyes"],
       regular: ["FaceThinking"],
       light: ["File", "HeadSideSpeak"],
     },
     icons: {
+      brands: ["Youtube"],
       solid: [
         "Bars",
         "Bomb",
@@ -176,14 +177,6 @@ export default defineNuxtConfig({
         {
           rel: "dns-prefetch",
           href: "https://www.clarity.ms/",
-        },
-        {
-          rel: "dns-prefetch",
-          href: "https://fonts.googleapis.com",
-        },
-        {
-          rel: "dns-prefetch",
-          href: "https://fonts.gstatic.com",
         },
       ],
     },

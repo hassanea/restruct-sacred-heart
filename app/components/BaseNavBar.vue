@@ -5,7 +5,7 @@
     :aria-label="label"
     :class="navbarClasses"
   >
-    <base-button
+    <lazy-base-button
       v-if="showMobileMenu"
       @click="toggleMobileNavigation"
       @keydown.enter="toggleMobileNavigation"
@@ -18,7 +18,7 @@
       <template #icon>
         <font-awesome :icon="setMobileIcon" size="lg" />
       </template>
-    </base-button>
+    </lazy-base-button>
     <base-list
       type="ul"
       variant="nav-list"

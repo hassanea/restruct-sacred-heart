@@ -52,8 +52,8 @@
     </base-section>
 
     <base-section
-      class="pt-7 pb-10 px-7 md:py-9 md:px-9 lg:p-11 xl:p-12 bg-gray-400"
-      id="sessions"
+      class="pt-7 pb-10 px-7 md:pt-10 md:pb-12 md:px-10 lg:p-12 xl:p-14 bg-gray-400"
+      id="models"
     >
       <div class="grid grid-cols-1">
         <h2
@@ -136,6 +136,42 @@
           <p
             class="text-lg md:text-xl leading-normal text-center md:text-left mt-2.5 md:mt-3.5 font-sans not-italic font-medium text-pretty"
           >
+            {{ sessions.refine.title }}
+            <nuxt-link
+              :to="sessions.refine.url"
+              target="_blank"
+              class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
+              external
+              v-tooltip.right="'Watch Video'"
+            >
+              <span class="mr-1 md:mr-1.5">
+                <font-awesome icon="fa-brands fa-youtube" />
+              </span>
+              {{ sessions.refine.text }}</nuxt-link
+            >
+          </p>
+
+          <p
+            class="text-lg md:text-xl leading-normal text-center md:text-left mt-2.5 md:mt-3.5 font-sans not-italic font-medium text-pretty"
+          >
+            {{ sessions.revision.title }}
+            <nuxt-link
+              :to="sessions.revision.url"
+              target="_blank"
+              class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
+              external
+              v-tooltip.right="'Review models E & F'"
+            >
+              <span class="mr-1 md:mr-1.5">
+                <font-awesome icon="fa-solid fa-eyes" />
+              </span>
+              {{ sessions.revision.text }}</nuxt-link
+            >
+          </p>
+
+          <p
+            class="text-lg md:text-xl leading-normal text-center md:text-left mt-2.5 md:mt-3.5 font-sans not-italic font-medium text-pretty"
+          >
             {{ sessions.overview.title }}
             <nuxt-link
               :to="sessions.overview.url"
@@ -168,151 +204,46 @@
               {{ sessions.feedback.text }}
             </nuxt-link>
           </p>
-
-          <p
-            class="text-lg md:text-xl leading-normal text-center md:text-left mt-2.5 md:mt-3.5 font-sans not-italic font-medium text-pretty"
-          >
-            <span class="mr-1 md:mr-1.5">
-              <font-awesome icon="fa-solid fa-check" />
-            </span>
-            Complete the Parishioner Survey by
-            <span class="font-bold underline">{{
-              useLocaleDate(new Date(`${prep.bullets[2]?.date}`))
-            }}</span
-            >:
-            <nuxt-link
-              :to="prep.bullets[2]?.url"
-              target="_blank"
-              class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
-              external
-              v-tooltip.right="'Complete Survey'"
-            >
-              {{ prep.bullets[2]?.urlTitle }}</nuxt-link
-            >
-          </p>
         </div>
       </div>
     </base-section>
     <base-section
-      class="bg-prep py-12 px-5 md:py-15 md:px-0 lg:py-18 xl:p-22.5"
-      id="prep"
+      class="bg-prep py-12 px-7 md:py-15 md:px-14 lg:py-18 xl:p-22.5"
+      id="pray"
     >
-      <div class="grid grid-cols-1">
+      <div class="grid grid-cols-1 gap-3.5 md:gap-4.5">
+        <nuxt-img
+          provider="imagekit"
+          :src="pray.icon"
+          alt=""
+          width="72"
+          height="72"
+          class="inline-block align-middle mx-auto size-18"
+        />
         <h2
-          class="font-cursive text-2xl md:text-3xl leading-normal font-bold not-italic text-center mb-8 md:mb-9 lg:mb-10"
+          class="font-cursive uppercase tracking-wide text-2xl md:text-3xl leading-normal font-bold not-italic text-center"
         >
-          {{ prep.title }}
+          {{ pray.title }}
         </h2>
-
-        <base-list type="ol" variant="prep-list">
-          <base-list-item
-            v-for="item in prep.bullets"
-            :key="item.name.toLowerCase()"
-            variant="prep"
-          >
-            <lazy-nuxt-img
-              provider="imagekit"
-              v-if="item.image.endsWith('.svg')"
-              :src="item.image"
-              alt=""
-              width="100"
-              height="100"
-              class="inline-block align-middle size-25 mb-5"
-            />
-            <lazy-font-awesome
-              v-else
-              :icon="item.image"
-              class="inline-block align-middle h-25 mb-5"
-              size="5x"
-            />
-
-            <base-disclosure
-              v-if="item.name === 'Pray'"
-              :btn-label="item.name"
-              :show="showPray"
-              @handle-show="displayPrayDisclosure"
-            >
-              <template #default>
-                <p>
-                  <strong class="text-base md:text-lg">{{ item.name }}</strong>
-                  <span class="hidden md:inline">
-                    {{ item.text }}
-                  </span>
-                  <span class="list-item md:hidden">
-                    {{ item.mobileText }}
-                  </span>
-                </p>
-              </template>
-            </base-disclosure>
-
-            <template v-if="item.name === 'Review'">
-              <base-disclosure
-                :btn-label="item.name"
-                :show="showReview"
-                @handle-show="displayReviewDisclosure"
-              >
-                <template #default>
-                  <p>
-                    <strong class="text-base md:text-lg">{{
-                      item.name
-                    }}</strong>
-                    <span class="hidden md:inline">
-                      {{ item.text }}
-                    </span>
-                    <span class="list-item md:hidden">
-                      {{ item.mobileText }}
-                    </span>
-
-                    <nuxt-link
-                      :to="item.url"
-                      v-tooltip.bottom="'Planning Area 10 Videos'"
-                      target="_blank"
-                      external
-                      class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
-                      >{{ item.urlTitle }}</nuxt-link
-                    >
-                  </p>
-                </template>
-              </base-disclosure>
-            </template>
-
-            <template v-if="item.name === 'Give'">
-              <base-disclosure
-                :btn-label="item.name"
-                :show="showGive"
-                @handle-show="displayGiveDisclosure"
-              >
-                <template #default>
-                  <p>
-                    <strong class="text-base md:text-lg">{{
-                      item.name
-                    }}</strong>
-                    <span class="hidden md:inline">
-                      {{ item.text }}
-                    </span>
-                    <span class="list-item md:hidden">
-                      {{ item.mobileText }}
-                    </span>
-                    <nuxt-link
-                      :to="item.url"
-                      v-tooltip="'Post Listening Session Survey'"
-                      target="_blank"
-                      external
-                      class="font-semibold italic hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
-                      >{{ item.urlTitle }}</nuxt-link
-                    >
-                    <span class="hidden md:inline">
-                      {{ item.lastLine }}
-                      <time :datetime="item.date">
-                        {{ useLocaleDate(new Date(`${item.date}`)) }}</time
-                      >.
-                    </span>
-                  </p>
-                </template>
-              </base-disclosure>
-            </template>
-          </base-list-item>
-        </base-list>
+        <nuxt-link
+          :to="`http://www.esacredheart.org/docs/${pray.prayer.file}`"
+          target="_blank"
+          class="inline-block cursor-pointer focus:outline-0 focus:border-b-3 focus:border-solid focus:border-gold"
+          external
+          v-tooltip.bottom="'View Prayer for Archdiocesan Restructuring'"
+        >
+          <nuxt-img
+            provider="imagekit"
+            format="avif"
+            :src="pray.prayer.image"
+            :alt="pray.prayer.alt"
+            loading="lazy"
+            preload
+            width="800"
+            height="1000"
+            class="block mx-auto object-cover max-w-full h-auto rounded-lg hover:brightness-120 shadow-xl shadow-tertiary"
+          />
+        </nuxt-link>
       </div>
     </base-section>
   </base-main>
@@ -321,9 +252,8 @@
 
 <script lang="ts" setup>
 import data from "@/assets/data/data.json";
-import { useLocaleDate } from "@/composables/useLocale";
 import { sortedByLastName } from "@/utils/index";
-const { meta, mainHead, subHead, navItems, pcc, kpc, sessions, prep } = data;
+const { meta, mainHead, subHead, navItems, pcc, kpc, sessions, pray } = data;
 
 useHead({
   title: `${meta.title} ${meta.location}${meta.subTitle}`,
@@ -343,19 +273,10 @@ useHead({
 });
 
 const currentYear = ref(0);
-const showPray = ref(true);
-const showReview = ref(true);
-const showGive = ref(true);
 
 onMounted(() => {
   currentYear.value = new Date().getFullYear();
 });
-
-const displayPrayDisclosure = () => (showPray.value = !showPray.value);
-
-const displayReviewDisclosure = () => (showReview.value = !showReview.value);
-
-const displayGiveDisclosure = () => (showGive.value = !showGive.value);
 
 const sortedPCCPeople = computed(() => {
   return sortedByLastName(pcc.people);
