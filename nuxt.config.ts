@@ -38,7 +38,10 @@ export default defineNuxtConfig({
   hub: {},
 
   runtimeConfig: {
-    public: {},
+    public: {
+      docEndPoint: "http://www.esacredheart.org/docs/",
+      modelEndPoint: "https://aod.filecamp.com/s/i/",
+    },
   },
   site: {
     url: "https://revamp.esacredheart.org",

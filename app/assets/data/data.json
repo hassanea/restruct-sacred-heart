@@ -6,7 +6,6 @@
     "description": "Archdiocese of Detroit's Restructuring Information for Sacred Heart Catholic Church, Auburn Hills, MI",
     "keywords": "Sacred Heart Catholic Church, Auburn Hills, Michigan, Archdiocese of Detroit, Restructuring, Archdiocesan Restructuring",
     "type": "website",
-    "dn": "http://www.esacredheart.org/docs/",
     "url": "https://revamp.esacredheart.org/"
   },
   "mainHead": ["AOD Restructuring at", "Sacred Heart—Auburn Hills"],
@@ -43,17 +42,17 @@
           {
             "type": "Video",
             "language": "English",
-            "url": "https://aod.filecamp.com/s/i/WGlz0bpefkutR9JD"
+            "id": "WGlz0bpefkutR9JD"
           },
           {
             "type": "Vídeo",
             "language": "Español",
-            "url": "https://aod.filecamp.com/s/i/jBqDz22IkU2xs7GK"
+            "id": "jBqDz22IkU2xs7GK"
           },
           {
             "type": "Map",
             "file": "PDF",
-            "url": "https://aod.filecamp.com/s/i/pcig0qoxgarx0IFM"
+            "id": "pcig0qoxgarx0IFM"
           }
         ]
       },
@@ -65,17 +64,17 @@
           {
             "type": "Video",
             "language": "English",
-            "url": "https://aod.filecamp.com/s/i/2zXbwDxrCeC7hDHr"
+            "id": "2zXbwDxrCeC7hDHr"
           },
           {
             "type": "Vídeo",
             "language": "Español",
-            "url": "https://aod.filecamp.com/s/i/we1hT7GZeQKTamk5"
+            "id": "we1hT7GZeQKTamk5"
           },
           {
             "type": "Map",
             "file": "PDF",
-            "url": "https://aod.filecamp.com/s/i/wPc8AvysaZJHAy1L"
+            "id": "wPc8AvysaZJHAy1L"
           }
         ]
       },
@@ -87,17 +86,17 @@
           {
             "type": "Video",
             "language": "English",
-            "url": "https://aod.filecamp.com/s/i/KVvppogHXoNGVcVl"
+            "id": "KVvppogHXoNGVcVl"
           },
           {
             "type": "Vídeo",
             "language": "Español",
-            "url": "https://aod.filecamp.com/s/i/3YMzitc47GyGtVMm"
+            "id": "3YMzitc47GyGtVMm"
           },
           {
             "type": "Map",
             "file": "PDF",
-            "url": "https://aod.filecamp.com/s/i/1uqxZRgAU3XFlNvr"
+            "id": "1uqxZRgAU3XFlNvr"
           }
         ]
       },
@@ -109,17 +108,17 @@
           {
             "type": "Video",
             "language": "English",
-            "url": "https://aod.filecamp.com/s/i/acdffoNFJaGNOhXu"
+            "id": "acdffoNFJaGNOhXu"
           },
           {
             "type": "Vídeo",
             "language": "Español",
-            "url": "https://aod.filecamp.com/s/i/WCrc8wkw0ePCH410"
+            "id": "WCrc8wkw0ePCH410"
           },
           {
             "type": "Map",
             "file": "PDF",
-            "url": "https://aod.filecamp.com/s/i/QjQMsFpn7gAgOFBM"
+            "id": "QjQMsFpn7gAgOFBM"
           }
         ]
       },
@@ -131,7 +130,7 @@
           {
             "type": "Map",
             "file": "PDF",
-            "url": "https://aod.filecamp.com/s/i/rUS8yUg71cnc8YcD"
+            "id": "rUS8yUg71cnc8YcD"
           }
         ]
       },
@@ -143,7 +142,7 @@
           {
             "type": "Map",
             "file": "PDF",
-            "url": "https://aod.filecamp.com/s/i/pVQ9sX2UQD1GKiap"
+            "id": "pVQ9sX2UQD1GKiap"
           }
         ]
       }
@@ -156,12 +155,12 @@
     "revision": {
       "title": "Rationale for Model Revision:",
       "text": "Check out revised models",
-      "url": "https://aod.filecamp.com/s/i/VS95sBwMMkXF0Ty5"
+      "id": "VS95sBwMMkXF0Ty5"
     },
     "overview": {
       "title": "Model Overview: Planning Area 10:",
       "text": "Read a summary of model options in Planning Area 10",
-      "url": "https://aod.filecamp.com/s/i/nMHEAOGKW65PM8T0"
+      "id": "nMHEAOGKW65PM8T0"
     },
     "feedback": {
       "title": "Key Parish Leaders Response to Parish Restructuring Feedback Survey:",

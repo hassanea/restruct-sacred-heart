@@ -81,7 +81,7 @@
                 <template v-for="resource in model.resources" :key="model.name">
                   <nuxt-link
                     v-if="resource.language === 'English'"
-                    :to="resource.url"
+                    :to="`${modelEndPoint}${resource.id}`"
                     target="_blank"
                     class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
                     external
@@ -96,7 +96,7 @@
                   >
                   <nuxt-link
                     v-else-if="resource.language === 'Español'"
-                    :to="resource.url"
+                    :to="`${modelEndPoint}${resource.id}`"
                     lang="es"
                     target="_blank"
                     class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
@@ -112,7 +112,7 @@
                   >
                   <nuxt-link
                     v-else
-                    :to="resource.url"
+                    :to="`${modelEndPoint}${resource.id}`"
                     target="_blank"
                     class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
                     external
@@ -156,7 +156,7 @@
           >
             {{ sessions.revision.title }}
             <nuxt-link
-              :to="sessions.revision.url"
+              :to="`${modelEndPoint}${sessions.revision.id}`"
               target="_blank"
               class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
               external
@@ -189,7 +189,7 @@
           >
             {{ sessions.overview.title }}
             <nuxt-link
-              :to="sessions.overview.url"
+              :to="`${modelEndPoint}${sessions.overview.id}`"
               target="_blank"
               class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
               external
@@ -207,7 +207,7 @@
           >
             {{ sessions.feedback.title }}
             <nuxt-link
-              :to="`https://www.esacredheart.org/docs/${sessions.feedback.file}`"
+              :to="`${docEndPoint}${sessions.feedback.file}`"
               target="_blank"
               class="font-semibold hover:bg-tertiary hover:text-light hover:border-4 hover:border-solid hover:border-lime-600 hover:rounded-sm focus:outline-0 focus:border-t-0 focus:border-b-3 focus:border-l-0 focus:border-r-0 focus:border-solid focus:border-gold box-shadow transition-shadow"
               external
@@ -241,7 +241,7 @@
           {{ pray.title }}
         </h2>
         <nuxt-link
-          :to="`http://www.esacredheart.org/docs/${pray.prayer.file}`"
+          :to="`${docEndPoint}${pray.prayer.file}`"
           target="_blank"
           class="inline-block cursor-pointer focus:outline-0 focus:border-b-3 focus:border-solid focus:border-gold"
           external
@@ -288,6 +288,8 @@ useHead({
 });
 
 const currentYear = ref(0);
+
+const { docEndPoint, modelEndPoint } = useRuntimeConfig().public;
 
 onMounted(() => {
   currentYear.value = new Date().getFullYear();

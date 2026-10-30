@@ -137,18 +137,4 @@ const setExpanded = computed(() => {
 .nav-link:active {
   box-shadow: 5px 5px 5px 5px #f7f7f7;
 }
-
-/* .router-link-active {
-  background-color: #1e2939;
-  color: oklch(87.9% 0.169 91.605);
-  padding: 0.625rem;
-  border-radius: 5px;
-} */
-
-/* .router-link-exact-active {
-  background-color: #1e2939;
-  color: oklch(87.9% 0.169 91.605);
-  padding: 0.625rem;
-  border-radius: 5px;
-} */
 </style>

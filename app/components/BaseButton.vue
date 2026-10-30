@@ -51,18 +51,6 @@ const buttonClasses = computed(() => {
       variant === "btn-mobile-nav",
   };
 });
-
-/* 
-    btn: variant === "btn",
-    "btn more": variant === "btn-more",
-    "btn no-mg": variant === "btn-no-mg",
-    "btn media": variant === "btn-media",
-    "btn-cta": variant === "btn-cta",
-    "btn-close": variant === "btn-close",
-    "btn btn-back": variant === "btn-back",
-    "btn-lightbox": variant === "btn-lightbox",
-    "btn-toolbar": variant === "btn-toolbar",
-*/
 </script>
 
 <style lang="css" scoped>
